@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export const Footer = () => {
 
     const footerStyle = {

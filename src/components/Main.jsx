@@ -1,15 +1,17 @@
 import styled from "styled-components";
 import mainImage from './../images/image19.png'
 import { Information } from "./Information";
-import { Location } from "./Location";
+import { About } from "./About";
+import { Access } from "./Access";
 import { Contact } from "./Contact";
 
 export const Main = () => {
     return (
-        <SMain id="main">
+        <SMain id="page-wrap">
             <SMainImage src={mainImage} />
             <Information />
-            <Location />
+            <About />
+            <Access />
             <Contact />
         </SMain>
     );

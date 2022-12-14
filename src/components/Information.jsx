@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Information = () => {
     return (
         <SMain id="information">
-            お知らせ<br /><br />
+            <h1>お知らせ</h1>
             子供生まれました
         </SMain>
     );
