@@ -12,11 +12,11 @@ function App() {
     <div id="outer-container">
       <Header></Header>
       <Routes>
-        <Route path="/temple-page" element={<Main />} />
-        <Route path="/temple-page/information" element={<Information />} />
-        <Route path="/temple-page/about" element={<About />} />
-        <Route path="/temple-page/access" element={<Access />} />
-        <Route path="/temple-page/contact" element={<Contact />} />
+        <Route path="/" element={<Main />} />
+        <Route path="/information" element={<Information />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/access" element={<Access />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer></Footer>
     </div>
