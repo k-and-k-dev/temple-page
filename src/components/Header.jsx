@@ -7,7 +7,7 @@ export const Header = () => {
     return (
         <SHeader>
             <SLogo>
-                <Link to="/"><img src={logoImage} alt="logoImage" /></Link>
+                <Link to="/temple-page"><img src={logoImage} alt="logoImage" /></Link>
             </SLogo>
             <SMenu width={ "100%" } />
         </SHeader>

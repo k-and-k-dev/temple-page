@@ -19,19 +19,19 @@ export const Menu = (props) => {
          isOpen={isOpen} onOpen={handleIsOpen} onClose={handleIsOpen}
         //  pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" }
          {...props}>
-            <Link to="/" onClick={closeMenu} className="menu-item">
+            <Link to="/temple-page" onClick={closeMenu} className="menu-item">
                 トップページ
             </Link>
-            <Link to="/information" onClick={closeMenu} className="menu-item">
+            <Link to="/temple-page/information" onClick={closeMenu} className="menu-item">
                 お知らせ
             </Link>
-            <Link to="/about" onClick={closeMenu} className="menu-item">
+            <Link to="/temple-page/about" onClick={closeMenu} className="menu-item">
                 善福寺について
             </Link>
-            <Link to="/access" onClick={closeMenu} className="menu-item">
+            <Link to="/temple-page/access" onClick={closeMenu} className="menu-item">
                 アクセス
             </Link>
-            <Link to="/contact" onClick={closeMenu} className="menu-item">
+            <Link to="/temple-page/contact" onClick={closeMenu} className="menu-item">
                 お問い合わせ
             </Link>
         </Slide>
