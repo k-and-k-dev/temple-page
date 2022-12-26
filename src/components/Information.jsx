@@ -2,15 +2,19 @@ import styled from "styled-components";
 
 export const Information = () => {
     return (
-        <SMain id="information">
+        <SMain>
             <h1>お知らせ</h1>
-            子供生まれました
+            <SParagraph>子供生まれました</SParagraph>
         </SMain>
     );
 };
 
-const SMain = styled.div`
+const SMain = styled.article`
     width: 100%;
     margin-top: 100px;
     text-align: center;
 `;
+
+const SParagraph = styled.p`
+    margin: 10px;
+`

@@ -9,7 +9,7 @@ import { Access } from './components/Access';
 
 function App() {
   return (
-    <div id="outer-container">
+    <>
       <Header></Header>
       <Routes>
         <Route path="/" element={<Main />} />
@@ -19,7 +19,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer></Footer>
-    </div>
+    </>
   );
 }
 

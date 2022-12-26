@@ -7,7 +7,7 @@ import { Contact } from "./Contact";
 
 export const Main = () => {
     return (
-        <SMain id="page-wrap">
+        <SMain>
             <SMainImage src={mainImage} />
             <Information />
             <About />
@@ -21,6 +21,9 @@ const SMain = styled.main`
     width: 100%;
     margin-top: 100px;
     text-align: center;
+    @media screen and (max-width: 767px) {
+        padding-top: 50px;
+    }
 `;
 
 const SMainImage = styled.img`
