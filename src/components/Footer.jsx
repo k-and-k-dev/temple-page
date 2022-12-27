@@ -38,6 +38,7 @@ const SFooter = styled.footer`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 100px;
 `
 
 const SMenu = styled.div`
