@@ -56,6 +56,9 @@ const SForm = styled.form`
     margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
+    @media screen and (max-width: 767px) {
+        max-width: 100%;
+    }
 `
 
 const SFormArea = styled.dl`
