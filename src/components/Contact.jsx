@@ -2,75 +2,135 @@ import styled from "styled-components";
 
 export const Contact = () => {
     return (
-        <SMain>
-            <h1>お問い合わせ</h1>
-            <SParagraph>葬儀、法要、その他お問い合わせにつきましては、下記の通りお電話もしくはメールにてご連絡下さい。</SParagraph>
-            <SSection>
-                <h2>お電話でのお問い合わせ</h2>
-                <SParagraph>080-9578-0392</SParagraph>
-            </SSection>
-            <SSection>
-                <h2>メールでのお問い合わせ</h2>
-                <SParagraph>下記専用フォームにて必要事項を入力後、送信ボタンを押して下さい。</SParagraph>
-                <SParagraph>数日中にご回答差し上げますが、万が一返信のない場合には恐れ入りますがお電話にて改めてご連絡下さい。</SParagraph>
-                <SForm action="#">
-                    <SFormArea>
-                        <SFormAreaDt><span>お名前</span></SFormAreaDt>
-                        <SFormAreaDd><SInput type="text" name="name" required></SInput></SFormAreaDd>
-                        <SFormAreaDt><span>メールアドレス</span></SFormAreaDt>
-                        <SFormAreaDd><SInput type="email" name="email" required></SInput></SFormAreaDd>
-                        <SFormAreaDt><span>お問い合わせ内容</span></SFormAreaDt>
-                        <SFormAreaDd><STextArea name="message" required></STextArea></SFormAreaDd>
-                        <SPConfirm>ご入力内容をご確認の上、お間違いがなければ送信ボタンを押してください。</SPConfirm>
-                        <SSubmitBtn type="submit">送信</SSubmitBtn>
-                    </SFormArea>
-                </SForm>
-            </SSection>
-        </SMain>
+        <SContact>
+            <SContactTitle>お問い合わせ</SContactTitle>
+            <SContactContent>葬儀、法要、その他お問い合わせにつきましては、下記の通りお電話かメールにてご連絡下さい。</SContactContent>
+            <SContactTell>
+                <SContactTellTitle>お電話でのお問い合わせ</SContactTellTitle>
+                <SContactTellHr></SContactTellHr>
+                <SContactTellContent>047-488-5809</SContactTellContent>
+            </SContactTell>
+            <SContactMail>
+                <SContactMailTitle>メールでのお問い合わせ</SContactMailTitle>
+                <SContactMailHr></SContactMailHr>
+                <SContactMailContent>下記専用フォームにて必要事項を入力後、送信ボタンを押して下さい。<br />数日中にご回答差し上げますが、万が一返信のない場合には再度送信いただくか、お電話にてご連絡ください。</SContactMailContent>
+            </SContactMail>
+            <SContactForm action="#">
+                <SContactFormArea>
+                    <SContactFormAreaRequiredDt><span>お名前（漢字）</span></SContactFormAreaRequiredDt>
+                    <SContactFormAreaDd><SContactFormInput type="text" name="name-kanji" required></SContactFormInput></SContactFormAreaDd>
+                    <SContactFormAreaRequiredDt><span>お名前（フリガナ）</span></SContactFormAreaRequiredDt>
+                    <SContactFormAreaDd><SContactFormInput type="text" name="name-hurigana" required></SContactFormInput></SContactFormAreaDd>
+                    <SContactFormAreaRequiredDt><span>メールアドレス</span></SContactFormAreaRequiredDt>
+                    <SContactFormAreaDd><SContactFormInput type="email" name="email" required></SContactFormInput></SContactFormAreaDd>
+                    <SContactFormAreaOptionDt><span>件名</span></SContactFormAreaOptionDt>
+                    <SContactFormAreaDd><SContactFormInput type="email" name="subject"></SContactFormInput></SContactFormAreaDd>
+                    <SContactFormAreaRequiredDt><span>お問い合わせ内容</span></SContactFormAreaRequiredDt>
+                    <SContactFormAreaDd><SContactFormTextArea name="message" required></SContactFormTextArea></SContactFormAreaDd>
+                    <SContactFormConfirm>ご入力内容をご確認の上、お間違いがなければ送信ボタンを押してください。</SContactFormConfirm>
+                    <SContactFormSubmitBtn type="submit">送信</SContactFormSubmitBtn>
+                </SContactFormArea>
+            </SContactForm>
+        </SContact>
     );
 };
 
-const SMain = styled.article`
-    width: 930px;
-    max-width: 90%;
-    margin-top: 130px;
-    text-align: center;
+const SContact = styled.section`
+    width: 90%;
+    margin-top: 60px;
+    font-family: 'Zen Old Mincho', serif;
     margin-left: auto;
     margin-right: auto;
-    @media screen and (max-width: 767px) {
-        width: 500px;
-    }
-`;
-
-const SSection = styled.section`
-    margin: 20px;
+    text-align: center;
 `
 
-const SParagraph = styled.p`
-    margin: 10px;
-`   
+const SContactTitle = styled.h1`
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: .17em;
+    line-height: 1.8;
+    color: #2c2c2c;
+`
 
-const SForm = styled.form`
-    width: 930px;
-    max-width: 90%;
-    margin-top: 25px;
+const SContactContent = styled.p`
+    width: 90%;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
+    /* text-align: left; */
+    text-align: center;
+    line-height: 1.5;
+    color: #2c2c2c;
+`
+
+const SContactTell = styled.div`
+    margin-top: 30px;
+`
+
+const SContactTellTitle = styled.p`
+`
+
+const SContactTellHr = styled.hr`
+    width: 90%;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+`
+
+const SContactTellContent = styled.p`
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #2c2c2c;
+`
+
+const SContactMail = styled.div`
+    margin-top: 30px;
+`
+
+const SContactMailTitle = styled.p`
+`
+
+const SContactMailHr = styled.hr`
+    width: 90%;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+`
+
+const SContactMailContent = styled.p`
+    width: 90%;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    /* text-align: left; */
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.8em;
+`
+
+const SContactForm = styled.form`
+    width: 930px;
+    max-width: 90%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
     @media screen and (max-width: 767px) {
         max-width: 100%;
     }
 `
 
-const SFormArea = styled.dl`
+const SContactFormArea = styled.dl`
     background-color: #f8f8f8;
     border: 1px solid #aaaaaa;
-    margin-top: 25px;
-    padding: 30px;
+    padding: 10px 30px;
     display: flex;
     flex-wrap: wrap;
 `
 
-const SFormAreaDt = styled.dt`
+const SContactFormAreaRequiredDt = styled.dt`
     width: 200px;
     padding: 15px 0;
     font-size: 15px;
@@ -88,7 +148,25 @@ const SFormAreaDt = styled.dt`
     }
 `
 
-const SFormAreaDd = styled.dd`
+const SContactFormAreaOptionDt = styled.dt`
+    width: 200px;
+    padding: 15px 0;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 24px;
+    &::after {
+        content: '';
+        font-size: 11px;
+        /* color: #eb4f32; */
+        margin-left: 10px;
+    }
+    @media screen and (max-width: 767px) {
+        width: 100%;
+        padding-bottom: 0;
+    }
+`
+
+const SContactFormAreaDd = styled.dd`
     width: calc(100% - 200px);
     padding: 15px 0;
     @media screen and (max-width: 767px) {
@@ -96,7 +174,7 @@ const SFormAreaDd = styled.dd`
     }
 `
 
-const SInput = styled.input`
+const SContactFormInput = styled.input`
     width: 100%;
     max-width: 280px;
     height: 40px;
@@ -104,25 +182,28 @@ const SInput = styled.input`
     padding-right: 10px;
 `
 
-const STextArea = styled.textarea`
+const SContactFormTextArea = styled.textarea`
     width: 100%;
     height: 260px;
     padding: 10px;
     line-height: 1.5;
 `
 
-const SPConfirm = styled.p`
+const SContactFormConfirm = styled.p`
     width: 100%;
     font-size: 16px;
     line-height: 22px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
+    text-align: center;
     @media screen and (max-width: 767px) {
-        text-align: left;
+        /* text-align: left; */
     }
 `
 
-const SSubmitBtn = styled.button`
+const SContactFormSubmitBtn = styled.button`
     width: 30%;
+    margin-top: 20px;
+    margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
     background-color: #f4dd64;
@@ -133,7 +214,6 @@ const SSubmitBtn = styled.button`
     font-family: 'Montserat', sans-serif;
     font-size: 14px;
     text-align: center;
-    margin-top: 20px;
     cursor: pointer;
     border: none;
     &:hover {

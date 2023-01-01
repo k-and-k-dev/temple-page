@@ -23,28 +23,28 @@ export const Header = () => {
                     <SLogoTextTemple>善福寺</SLogoTextTemple>
                 </SLogoContainer>
                 <SButton onClick={menuBtnToggle}></SButton>
-                {menuActive ? 
-                <SMenuActive>
-                <SNav>
-                    <SNavUl>
-                        <SNavLi><Link to="/information" onClick={menuBtnToggle}>Information</Link></SNavLi>
-                        <SNavLi><Link to="/about" onClick={menuBtnToggle}>About</Link></SNavLi>
-                        <SNavLi><Link to="/access" onClick={menuBtnToggle}>Access</Link></SNavLi>
-                        <SNavLi><Link to="/contact" onClick={menuBtnToggle}>Contact</Link></SNavLi>
-                    </SNavUl>
-                </SNav>
-                </SMenuActive>
-                : 
-                <SMenu>
-                    <SNav>
-                        <SNavUl>
-                            <SNavLi><Link to="/information">Information</Link></SNavLi>
-                            <SNavLi><Link to="/about">About</Link></SNavLi>
-                            <SNavLi><Link to="/access">Access</Link></SNavLi>
-                            <SNavLi><Link to="/contact">Contact</Link></SNavLi>
-                        </SNavUl>
-                    </SNav>
-                </SMenu>
+                {menuActive ?
+                    <SMenuActive>
+                        <SNav>
+                            <SNavUl>
+                                <SNavLi><Link to="/" onClick={menuBtnToggle}>ホーム</Link></SNavLi>
+                                <SNavLi><Link to="/information" onClick={menuBtnToggle}>お知らせ</Link></SNavLi>
+                                <SNavLi><Link to="/about" onClick={menuBtnToggle}>当山について</Link></SNavLi>
+                                <SNavLi><Link to="/contact" onClick={menuBtnToggle}>お問い合わせ</Link></SNavLi>
+                            </SNavUl>
+                        </SNav>
+                    </SMenuActive>
+                    :
+                    <SMenu>
+                        <SNav>
+                            <SNavUl>
+                                <SNavLi><Link to="/">ホーム</Link></SNavLi>
+                                <SNavLi><Link to="/information">お知らせ</Link></SNavLi>
+                                <SNavLi><Link to="/about">当山について</Link></SNavLi>
+                                <SNavLi><Link to="/contact">お問い合わせ</Link></SNavLi>
+                            </SNavUl>
+                        </SNav>
+                    </SMenu>
                 }
             </SHeaderInner>
         </SHeader>
@@ -137,7 +137,7 @@ const SMenu = styled.div`
         left: 0;
         right: 0;
         color: #ffffff;
-        background-color: #736e62;
+        background-color: #1b813e;
         padding-top: 30px;
         padding-bottom: 50px;
     }
