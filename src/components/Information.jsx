@@ -11,7 +11,7 @@ export const Information = () => {
 
 const SMain = styled.article`
     width: 100%;
-    margin-top: 100px;
+    margin-top: 130px;
     text-align: center;
 `;
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom"
-import logoImage from './../images/image1.png'
+import logoImage from './../images/image11.png'
 import MenuIconImage from './../images/icon-menu.png'
 
 export const Header = () => {
@@ -15,9 +15,13 @@ export const Header = () => {
     return (
         <SHeader>
             <SHeaderInner>
-                <SLogo>
-                    <Link to="/"><img src={logoImage} alt="logo" /></Link>
-                </SLogo>
+                <SLogoContainer>
+                    <SLogoImage>
+                        <Link to="/"><img src={logoImage} alt="logo" /></Link>
+                    </SLogoImage>
+                    <SLogoTextDenomination>浄土宗</SLogoTextDenomination>
+                    <SLogoTextTemple>善福寺</SLogoTextTemple>
+                </SLogoContainer>
                 <SButton onClick={menuBtnToggle}></SButton>
                 {menuActive ? 
                 <SMenuActive>
@@ -48,21 +52,21 @@ export const Header = () => {
 };
 
 const SHeader = styled.header`
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    height: 70px;
+    z-index: 10;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     @media screen and (max-width: 767px) {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-color: #ffffff;
-        height: 50px;
-        z-index: 10;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     }
 `;
 
 const SHeaderInner = styled.div`
-    max-width: 1200px;
-    height: 110px;
+    max-width: 930px;
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 40px;
@@ -73,18 +77,40 @@ const SHeaderInner = styled.div`
     @media screen and (max-width: 767px) {
         padding-left: 20px;
         padding-right: 20px;
-        height: 100%;
         position: relative;
     }
 `
 
-const SLogo = styled.p`
-    display: block;
-    width: 170px;
+const SLogoContainer = styled.div`
+    display: flex;
+    align-items: center;
     @media screen and (max-width: 767px) {
-        width: 100px;   
+    }
+`
+
+const SLogoImage = styled.p`
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    @media screen and (max-width: 767px) {
     }
 `;
+
+const SLogoTextDenomination = styled.p`
+    font-family: 'Yuji Boku', serif;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    color: #2c2c2c;
+`
+
+const SLogoTextTemple = styled.p`
+    font-family: 'Yuji Boku', serif;
+    font-size: 40px;
+    letter-spacing: 0.3em;
+    color: #2c2c2c;
+    margin-left: 10px;
+`
 
 const SButton = styled.button`
     display: none;

@@ -33,7 +33,7 @@ export const Contact = () => {
 const SMain = styled.article`
     width: 930px;
     max-width: 90%;
-    margin-top: 100px;
+    margin-top: 130px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;

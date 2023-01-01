@@ -18,7 +18,7 @@ export const Footer = () => {
                 </SNav>
             </SMenu>
             <SLogo>
-                <Link to="/"><img src={logoImage} alt="logo" /></Link>
+                <Link to="/"><img src={logoImage} alt="logoImage" /></Link>
             </SLogo>
             <STell>
                 TEL 080-9578-0392
