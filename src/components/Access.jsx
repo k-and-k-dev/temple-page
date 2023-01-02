@@ -1,30 +1,35 @@
 import styled from "styled-components";
+import { Spacer } from "./Spacer";
 
-export const Access = () => {
+export const Access = (props) => {
+    const { marginTop } = props;
     return (
-        <SAccess>
-            <SAccessTitle>アクセス</SAccessTitle>
-            <SAccessMap>
-                <SAccessMapIframe title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d389.46028154752884!2d140.11923203357935!3d35.75077893898744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022875e54a13eb3%3A0x85fe3b2e8814c895!2z5rWE5Zyf5a6XIOWWhOemj-Wvug!5e0!3m2!1sja!2sjp!4v1672043172770!5m2!1sja!2sjp" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></SAccessMapIframe>
-            </SAccessMap>
-            <SAccessAddress>
-                <SAccessAddressTitle>
-                    <SAccessAddressTitleSub>浄土宗</SAccessAddressTitleSub>
-                    <SAccessAddressTitleMain>善福寺</SAccessAddressTitleMain>
-                </SAccessAddressTitle>
-                <SAccessAddressContent>〒276-0015<br />千葉県八千代市米本2077<br />TEL: 047-488-5809<br />FAX: 047-488-5810</SAccessAddressContent>
-            </SAccessAddress>
-            <SAccessDirectionPublic>
-                <SAccessDirectionPublicTitle>公共交通機関をご利用の場合</SAccessDirectionPublicTitle>
-                <SAccessDirectionPublicHr></SAccessDirectionPublicHr>
-                <SAccessDirectionPublicContent>京成電鉄「勝田台」駅下車<br />東洋バス「米本団地」行きに乗車し約14分<br />「米本神社前」下車後、徒歩約7分</SAccessDirectionPublicContent>
-            </SAccessDirectionPublic>
-            <SAccessDirectionCar>
-                <SAccessDirectionCarTitle>お車でお越しの場合</SAccessDirectionCarTitle>
-                <SAccessDirectionCarHr></SAccessDirectionCarHr>
-                <SAccessDirectionCarContent>国道16号線「米本神社前」交差点を<br />千葉北IC方向からお越しの場合は右折<br />柏IC方向からお越しの場合は左折<br />すぐの突き当りを左折し200m<br />※鐘楼堂より手前の空き場所に駐車願います</SAccessDirectionCarContent>
-            </SAccessDirectionCar>
-        </SAccess>
+        <>
+            <Spacer size={marginTop}></Spacer>
+            <SAccess>
+                <SAccessTitle>アクセス</SAccessTitle>
+                <SAccessMap>
+                    <SAccessMapIframe title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d389.46028154752884!2d140.11923203357935!3d35.75077893898744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022875e54a13eb3%3A0x85fe3b2e8814c895!2z5rWE5Zyf5a6XIOWWhOemj-Wvug!5e0!3m2!1sja!2sjp!4v1672043172770!5m2!1sja!2sjp" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></SAccessMapIframe>
+                </SAccessMap>
+                <SAccessAddress>
+                    <SAccessAddressTitle>
+                        <SAccessAddressTitleSub>浄土宗</SAccessAddressTitleSub>
+                        <SAccessAddressTitleMain>善福寺</SAccessAddressTitleMain>
+                    </SAccessAddressTitle>
+                    <SAccessAddressContent>〒276-0015<br />千葉県八千代市米本2077<br />TEL: 047-488-5809<br />FAX: 047-488-5810</SAccessAddressContent>
+                </SAccessAddress>
+                <SAccessDirectionPublic>
+                    <SAccessDirectionPublicTitle>公共交通機関をご利用の場合</SAccessDirectionPublicTitle>
+                    <SAccessDirectionPublicHr></SAccessDirectionPublicHr>
+                    <SAccessDirectionPublicContent>京成電鉄「勝田台」駅下車<br />東洋バス「米本団地」行きに乗車し約14分<br />「米本神社前」下車後、徒歩約7分</SAccessDirectionPublicContent>
+                </SAccessDirectionPublic>
+                <SAccessDirectionCar>
+                    <SAccessDirectionCarTitle>お車でお越しの場合</SAccessDirectionCarTitle>
+                    <SAccessDirectionCarHr></SAccessDirectionCarHr>
+                    <SAccessDirectionCarContent>国道16号線「米本神社前」交差点を<br />千葉北IC方向からお越しの場合は右折<br />柏IC方向からお越しの場合は左折<br />すぐの突き当りを左折し200m<br />※鐘楼堂より手前の空き場所に駐車願います</SAccessDirectionCarContent>
+                </SAccessDirectionCar>
+            </SAccess>
+        </>
     );
 };
 
@@ -69,7 +74,7 @@ const SAccessAddress = styled.div`
     margin-top: 10px;
 `
 
-const SAccessAddressTitle = styled.p`
+const SAccessAddressTitle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,7 +117,7 @@ const SAccessDirectionPublicContent = styled.p`
     line-height: 1.8em;
 `
 
-const SAccessDirectionCar = styled.p`
+const SAccessDirectionCar = styled.div`
     margin-top: 30px;
 `
 

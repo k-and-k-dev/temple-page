@@ -1,23 +1,21 @@
 import { Routes, Route } from 'react-router-dom'
 import { Header } from './components/Header';
-import { Main } from './components/Main';
-import { Information } from './components/Information';
-import { About } from './components/About';
-import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { Access } from './components/Access';
+import { MainPage } from './pages/Main';
+import { InformationPage } from './pages/Information';
+import { AboutPage } from './pages/About';
+import { ContactPage } from './pages/Contact';
 
 function App() {
   return (
     <>
       <Header></Header>
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/index.html" element={<Main />} />
-        <Route path="/information" element={<Information />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/access" element={<Access />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/" element={<MainPage />} />
+        <Route path="/index.html" element={<MainPage />} />
+        <Route path="/information" element={<InformationPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <Footer></Footer>
     </>

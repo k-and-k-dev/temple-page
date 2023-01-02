@@ -4,12 +4,24 @@ import { Link } from "react-router-dom"
 import logoImage from './../images/image11.png'
 import MenuIconImage from './../images/icon-menu.png'
 
+export const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "auto",
+    });
+};
+
 export const Header = () => {
 
     const [menuActive, setMenuActive] = useState(false);
 
+    const logoBtnToggle = () => {
+        scrollToTop();
+    }
+
     const menuBtnToggle = () => {
         setMenuActive(!menuActive);
+        scrollToTop();
     }
 
     return (
@@ -17,7 +29,7 @@ export const Header = () => {
             <SHeaderInner>
                 <SLogoContainer>
                     <SLogoImage>
-                        <Link to="/"><img src={logoImage} alt="logo" /></Link>
+                        <Link to="/" onClick={logoBtnToggle}><img src={logoImage} alt="logo" /></Link>
                     </SLogoImage>
                     <SLogoTextDenomination>浄土宗</SLogoTextDenomination>
                     <SLogoTextTemple>善福寺</SLogoTextTemple>

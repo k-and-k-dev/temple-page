@@ -1,11 +1,11 @@
 import styled from "styled-components";
+import { Information } from "../components/Information";
+import { About } from "../components/About";
+import { Contact } from "../components/Contact";
+import { Access } from "../components/Access";
 import mainImage from './../images/image19.png'
-import { Information } from "./Information";
-import { About } from "./About";
-import { Access } from "./Access";
-import { Contact } from "./Contact";
 
-export const Main = () => {
+export const MainPage = () => {
     return (
         <SMain>
             <SMainImage src={mainImage} alt="mainImage" />
@@ -13,7 +13,7 @@ export const Main = () => {
             <About></About>
             <Access></Access>
             <Contact></Contact>
-        </SMain>
+        </SMain >
     );
 };
 

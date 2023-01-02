@@ -1,37 +1,42 @@
 import styled from "styled-components";
+import { Spacer } from "./Spacer";
 
-export const Contact = () => {
+export const Contact = (props) => {
+    const { marginTop } = props;
     return (
-        <SContact>
-            <SContactTitle>お問い合わせ</SContactTitle>
-            <SContactContent>葬儀、法要、その他お問い合わせにつきましては、下記の通りお電話かメールにてご連絡下さい。</SContactContent>
-            <SContactTell>
-                <SContactTellTitle>お電話でのお問い合わせ</SContactTellTitle>
-                <SContactTellHr></SContactTellHr>
-                <SContactTellContent>047-488-5809</SContactTellContent>
-            </SContactTell>
-            <SContactMail>
-                <SContactMailTitle>メールでのお問い合わせ</SContactMailTitle>
-                <SContactMailHr></SContactMailHr>
-                <SContactMailContent>下記専用フォームにて必要事項を入力後、送信ボタンを押して下さい。<br />数日中にご回答差し上げますが、万が一返信のない場合には再度送信いただくか、お電話にてご連絡ください。</SContactMailContent>
-            </SContactMail>
-            <SContactForm action="#">
-                <SContactFormArea>
-                    <SContactFormAreaRequiredDt><span>お名前（漢字）</span></SContactFormAreaRequiredDt>
-                    <SContactFormAreaDd><SContactFormInput type="text" name="name-kanji" required></SContactFormInput></SContactFormAreaDd>
-                    <SContactFormAreaRequiredDt><span>お名前（フリガナ）</span></SContactFormAreaRequiredDt>
-                    <SContactFormAreaDd><SContactFormInput type="text" name="name-hurigana" required></SContactFormInput></SContactFormAreaDd>
-                    <SContactFormAreaRequiredDt><span>メールアドレス</span></SContactFormAreaRequiredDt>
-                    <SContactFormAreaDd><SContactFormInput type="email" name="email" required></SContactFormInput></SContactFormAreaDd>
-                    <SContactFormAreaOptionDt><span>件名</span></SContactFormAreaOptionDt>
-                    <SContactFormAreaDd><SContactFormInput type="email" name="subject"></SContactFormInput></SContactFormAreaDd>
-                    <SContactFormAreaRequiredDt><span>お問い合わせ内容</span></SContactFormAreaRequiredDt>
-                    <SContactFormAreaDd><SContactFormTextArea name="message" required></SContactFormTextArea></SContactFormAreaDd>
-                    <SContactFormConfirm>ご入力内容をご確認の上、お間違いがなければ送信ボタンを押してください。</SContactFormConfirm>
-                    <SContactFormSubmitBtn type="submit">送信</SContactFormSubmitBtn>
-                </SContactFormArea>
-            </SContactForm>
-        </SContact>
+        <>
+            <Spacer size={marginTop}></Spacer>
+            <SContact>
+                <SContactTitle>お問い合わせ</SContactTitle>
+                <SContactContent>葬儀、法要、その他お問い合わせにつきましては、下記の通りお電話かメールにてご連絡下さい。</SContactContent>
+                <SContactTell>
+                    <SContactTellTitle>お電話でのお問い合わせ</SContactTellTitle>
+                    <SContactTellHr></SContactTellHr>
+                    <SContactTellContent>047-488-5809</SContactTellContent>
+                </SContactTell>
+                <SContactMail>
+                    <SContactMailTitle>メールでのお問い合わせ</SContactMailTitle>
+                    <SContactMailHr></SContactMailHr>
+                    <SContactMailContent>下記専用フォームにて必要事項を入力後、送信ボタンを押して下さい。<br />数日中にご回答差し上げますが、万が一返信のない場合には再度送信いただくか、お電話にてご連絡ください。</SContactMailContent>
+                </SContactMail>
+                <SContactForm action="#">
+                    <SContactFormArea>
+                        <SContactFormAreaRequiredDt><span>お名前（漢字）</span></SContactFormAreaRequiredDt>
+                        <SContactFormAreaDd><SContactFormInput type="text" name="name-kanji" required></SContactFormInput></SContactFormAreaDd>
+                        <SContactFormAreaRequiredDt><span>お名前（フリガナ）</span></SContactFormAreaRequiredDt>
+                        <SContactFormAreaDd><SContactFormInput type="text" name="name-hurigana" required></SContactFormInput></SContactFormAreaDd>
+                        <SContactFormAreaRequiredDt><span>メールアドレス</span></SContactFormAreaRequiredDt>
+                        <SContactFormAreaDd><SContactFormInput type="email" name="email" required></SContactFormInput></SContactFormAreaDd>
+                        <SContactFormAreaOptionDt><span>件名</span></SContactFormAreaOptionDt>
+                        <SContactFormAreaDd><SContactFormInput type="email" name="subject"></SContactFormInput></SContactFormAreaDd>
+                        <SContactFormAreaRequiredDt><span>お問い合わせ内容</span></SContactFormAreaRequiredDt>
+                        <SContactFormAreaDd><SContactFormTextArea name="message" required></SContactFormTextArea></SContactFormAreaDd>
+                        <SContactFormConfirm>ご入力内容をご確認の上、お間違いがなければ送信ボタンを押してください。</SContactFormConfirm>
+                        <SContactFormSubmitBtn type="submit">送信</SContactFormSubmitBtn>
+                    </SContactFormArea>
+                </SContactForm>
+            </SContact>
+        </>
     );
 };
 

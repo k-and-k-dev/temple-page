@@ -1,33 +1,38 @@
 import styled from "styled-components";
+import { Spacer } from "./Spacer";
 
-export const Information = () => {
+export const Information = (props) => {
+    const { marginTop } = props;
     return (
-        <SInformation>
-            <SInformationTitle>お知らせ</SInformationTitle>
-            <SInformationList>
-                <SInformationListItem>
-                    <SInformationListItemDate>2022.12.25</SInformationListItemDate>
-                    <SInformationListItemHr />
-                    <SInformationListItemContent>令和5年修正会開催について</SInformationListItemContent>
-                </SInformationListItem>
-                <SInformationListItem>
-                    <SInformationListItemDate>2022.10.01</SInformationListItemDate>
-                    <SInformationListItemHr />
-                    <SInformationListItemContent>本堂修繕工事開始のご案内</SInformationListItemContent>
-                </SInformationListItem>
-                <SInformationListItem>
-                    <SInformationListItemDate>2022.09.05</SInformationListItemDate>
-                    <SInformationListItemHr />
-                    <SInformationListItemContent>令和4年秋彼岸について</SInformationListItemContent>
-                </SInformationListItem>
-                <SInformationListItem>
-                    <SInformationListItemDate>2022.08.01</SInformationListItemDate>
-                    <SInformationListItemHr />
-                    <SInformationListItemContent>令和4年施餓鬼会中止のお知らせ</SInformationListItemContent>
-                </SInformationListItem>
-            </SInformationList>
-            <SInformationButton>もっと見る</SInformationButton>
-        </SInformation>
+        <>
+            <Spacer size={marginTop}></Spacer>
+            <SInformation>
+                <SInformationTitle>お知らせ</SInformationTitle>
+                <SInformationList>
+                    <SInformationListItem>
+                        <SInformationListItemDate>2022.12.25</SInformationListItemDate>
+                        <SInformationListItemHr />
+                        <SInformationListItemContent>令和5年修正会開催について</SInformationListItemContent>
+                    </SInformationListItem>
+                    <SInformationListItem>
+                        <SInformationListItemDate>2022.10.01</SInformationListItemDate>
+                        <SInformationListItemHr />
+                        <SInformationListItemContent>本堂修繕工事開始のご案内</SInformationListItemContent>
+                    </SInformationListItem>
+                    <SInformationListItem>
+                        <SInformationListItemDate>2022.09.05</SInformationListItemDate>
+                        <SInformationListItemHr />
+                        <SInformationListItemContent>令和4年秋彼岸について</SInformationListItemContent>
+                    </SInformationListItem>
+                    <SInformationListItem>
+                        <SInformationListItemDate>2022.08.01</SInformationListItemDate>
+                        <SInformationListItemHr />
+                        <SInformationListItemContent>令和4年施餓鬼会中止のお知らせ</SInformationListItemContent>
+                    </SInformationListItem>
+                </SInformationList>
+                <SInformationButton>もっと見る</SInformationButton>
+            </SInformation>
+        </>
     );
 };
 

@@ -1,14 +1,19 @@
 import styled from "styled-components";
 import mainImage from './../images/image19.png'
+import { Spacer } from "./Spacer";
 
-export const About = () => {
+export const About = (props) => {
+    const { marginTop } = props;
     return (
-        <SAbout>
-            <SAboutTitle>当山について</SAboutTitle>
-            <SAboutImage src={mainImage} alt="aboutImage"></SAboutImage>
-            <SAboutContent>当山は、千葉県八千代市米本にある浄土宗の寺院です。<br />正式名称は、光明山攝取院善福寺です。<br />最譽貞庵上人を開基開山として、安土桃山時代である天正18年（1590年）に創建されました。</SAboutContent>
-            <SAboutButton>もっと見る</SAboutButton>
-        </SAbout>
+        <>
+            <Spacer size={marginTop}></Spacer>
+            <SAbout>
+                <SAboutTitle>当山について</SAboutTitle>
+                <SAboutImage src={mainImage} alt="aboutImage"></SAboutImage>
+                <SAboutContent>当山は、千葉県八千代市米本にある浄土宗の寺院です。<br />正式名称は、光明山攝取院善福寺です。<br />最譽貞庵上人を開基開山として、安土桃山時代である天正18年（1590年）に創建されました。</SAboutContent>
+                <SAboutButton>もっと見る</SAboutButton>
+            </SAbout>
+        </>
     );
 };
 

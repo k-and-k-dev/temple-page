@@ -1,18 +1,22 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom"
-import { SNav, SNavUl, SNavLi } from './Header'
+import { SNav, SNavUl, SNavLi, scrollToTop } from './Header'
 
 export const Footer = () => {
+
+    const menuBtnToggle = () => {
+        scrollToTop();
+    }
 
     return (
         <SFooter>
             <SMenu>
                 <SNav>
                     <SNavUl>
-                        <SNavLi><Link to="/">ホーム</Link></SNavLi>
-                        <SNavLi><Link to="/information">お知らせ</Link></SNavLi>
-                        <SNavLi><Link to="/about">当山について</Link></SNavLi>
-                        <SNavLi><Link to="/contact">お問い合わせ</Link></SNavLi>
+                        <SNavLi><Link to="/" onClick={menuBtnToggle}>ホーム</Link></SNavLi>
+                        <SNavLi><Link to="/information" onClick={menuBtnToggle}>お知らせ</Link></SNavLi>
+                        <SNavLi><Link to="/about" onClick={menuBtnToggle}>当山について</Link></SNavLi>
+                        <SNavLi><Link to="/contact" onClick={menuBtnToggle}>お問い合わせ</Link></SNavLi>
                     </SNavUl>
                 </SNav>
             </SMenu>
