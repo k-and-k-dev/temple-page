@@ -1,8 +1,40 @@
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { Spacer } from "./Spacer";
 
+const sendMailApiUrl = "https://uy3d4sbsp7.execute-api.ap-northeast-1.amazonaws.com/v1/send";
+
 export const Contact = (props) => {
+
     const { marginTop } = props;
+
+    const nameKanjiRef = useRef(null);
+    const nameHuriganaRef = useRef(null);
+    const emailRef = useRef(null);
+    const subjectRef = useRef(null);
+    const messageRef = useRef(null);
+
+    const submitBtnToggle = async (e) => {
+        // submit後にリロードさせない
+        e.preventDefault();
+
+        // API Gateway経由でSESメール送信
+        const res = await fetch(sendMailApiUrl, {
+            method: "POST",
+            body: JSON.stringify({
+                form: {
+                    name_kanji: nameKanjiRef.current.value,
+                    name_hurigana: nameHuriganaRef.current.value,
+                    email: emailRef.current.value,
+                    subject: subjectRef.current.value,
+                    message: messageRef.current.value
+                }
+            }),
+        });
+        const resJson = await res.json();
+        console.log(resJson);
+    };
+
     return (
         <>
             <Spacer size={marginTop}></Spacer>
@@ -22,17 +54,17 @@ export const Contact = (props) => {
                 <SContactForm action="#">
                     <SContactFormArea>
                         <SContactFormAreaRequiredDt><span>お名前（漢字）</span></SContactFormAreaRequiredDt>
-                        <SContactFormAreaDd><SContactFormInput type="text" name="name-kanji" required></SContactFormInput></SContactFormAreaDd>
+                        <SContactFormAreaDd><SContactFormInput type="text" ref={nameKanjiRef} required></SContactFormInput></SContactFormAreaDd>
                         <SContactFormAreaRequiredDt><span>お名前（フリガナ）</span></SContactFormAreaRequiredDt>
-                        <SContactFormAreaDd><SContactFormInput type="text" name="name-hurigana" required></SContactFormInput></SContactFormAreaDd>
+                        <SContactFormAreaDd><SContactFormInput type="text" ref={nameHuriganaRef} required></SContactFormInput></SContactFormAreaDd>
                         <SContactFormAreaRequiredDt><span>メールアドレス</span></SContactFormAreaRequiredDt>
-                        <SContactFormAreaDd><SContactFormInput type="email" name="email" required></SContactFormInput></SContactFormAreaDd>
+                        <SContactFormAreaDd><SContactFormInput type="email" ref={emailRef} required></SContactFormInput></SContactFormAreaDd>
                         <SContactFormAreaOptionDt><span>件名</span></SContactFormAreaOptionDt>
-                        <SContactFormAreaDd><SContactFormInput type="email" name="subject"></SContactFormInput></SContactFormAreaDd>
+                        <SContactFormAreaDd><SContactFormInput type="text" ref={subjectRef}></SContactFormInput></SContactFormAreaDd>
                         <SContactFormAreaRequiredDt><span>お問い合わせ内容</span></SContactFormAreaRequiredDt>
-                        <SContactFormAreaDd><SContactFormTextArea name="message" required></SContactFormTextArea></SContactFormAreaDd>
+                        <SContactFormAreaDd><SContactFormTextArea name="message" ref={messageRef} required></SContactFormTextArea></SContactFormAreaDd>
                         <SContactFormConfirm>ご入力内容をご確認の上、お間違いがなければ送信ボタンを押してください。</SContactFormConfirm>
-                        <SContactFormSubmitBtn type="submit">送信</SContactFormSubmitBtn>
+                        <SContactFormSubmitBtn type="submit" onClick={submitBtnToggle}>送信</SContactFormSubmitBtn>
                     </SContactFormArea>
                 </SContactForm>
             </SContact>
