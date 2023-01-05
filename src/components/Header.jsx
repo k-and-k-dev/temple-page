@@ -77,7 +77,7 @@ const SHeader = styled.header`
 `;
 
 const SHeaderInner = styled.div`
-    max-width: 930px;
+    max-width: 1200px;
     height: 100%;
     margin-left: auto;
     margin-right: auto;

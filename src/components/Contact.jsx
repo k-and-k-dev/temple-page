@@ -148,7 +148,6 @@ const SContactMailContent = styled.p`
 `
 
 const SContactForm = styled.form`
-    width: 930px;
     max-width: 90%;
     margin-top: 30px;
     margin-left: auto;

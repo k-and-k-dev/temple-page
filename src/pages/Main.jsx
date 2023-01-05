@@ -21,7 +21,6 @@ export const MainPage = () => {
 };
 
 const SMain = styled.main`
-    width: 100%;
     margin-top: 70px;
     text-align: center;
     @media screen and (max-width: 767px) {

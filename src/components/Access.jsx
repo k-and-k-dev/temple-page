@@ -50,7 +50,6 @@ const SAccessTitle = styled.h1`
 `
 
 const SAccessMap = styled.div`
-    width: 930px;
     max-width: 100%;
     margin-top: 30px;
     margin-left: auto;
