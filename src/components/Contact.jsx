@@ -44,7 +44,7 @@ export const Contact = (props) => {
                 <SContactTell>
                     <SContactTellTitle>お電話でのお問い合わせ</SContactTellTitle>
                     <SContactTellHr></SContactTellHr>
-                    <SContactTellContent>047-488-5809</SContactTellContent>
+                    <SContactTellContent><a href="tel:047-488-5809">047-488-5809</a></SContactTellContent>
                 </SContactTell>
                 <SContactMail>
                     <SContactMailTitle>メールでのお問い合わせ</SContactMailTitle>
