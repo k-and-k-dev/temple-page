@@ -4,13 +4,16 @@ import { About } from "../components/About";
 import { Contact } from "../components/Contact";
 import { Access } from "../components/Access";
 import mainImage from './../images/image19.png'
+import { LinkButton } from "../components/LinkButton";
 
 export const MainPage = () => {
     return (
         <SMain>
             <SMainImage src={mainImage} alt="mainImage" />
-            <Information></Information>
+            <Information displayNum="3"></Information>
+            <LinkButton page="/Information">もっと見る</LinkButton>
             <About></About>
+            <LinkButton page="/About">もっと見る</LinkButton>
             <Access></Access>
             <Contact></Contact>
         </SMain >
