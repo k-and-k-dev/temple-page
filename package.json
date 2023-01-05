@@ -21,7 +21,8 @@
     "eject": "react-scripts eject",
     "rm": "rmdir /s /q docs",
     "mv": "move build docs",
-    "deploy": "npm run rm && npm run build && npm run mv"
+    "cp": "xcopy CNAME docs",
+    "deploy": "npm run rm && npm run build && npm run mv && npm run cp"
   },
   "eslintConfig": {
     "extends": [
