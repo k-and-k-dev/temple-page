@@ -44,7 +44,7 @@ export const Contact = (props) => {
                 <SContactTell>
                     <SContactTellTitle>お電話でのお問い合わせ</SContactTellTitle>
                     <SContactTellHr></SContactTellHr>
-                    <SContactTellContent><a href="tel:047-488-5809">047-488-5809</a></SContactTellContent>
+                    <SContactTellContent><a href="tel:047-488-5809"><u>047-488-5809</u></a></SContactTellContent>
                 </SContactTell>
                 <SContactMail>
                     <SContactMailTitle>メールでのお問い合わせ</SContactMailTitle>
@@ -119,7 +119,7 @@ const SContactTellContent = styled.p`
     font-size: 20px;
     font-weight: 600;
     line-height: 1.5;
-    color: #2c2c2c;
+    color: #0000ff;
 `
 
 const SContactMail = styled.div`
