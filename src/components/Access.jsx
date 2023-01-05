@@ -16,7 +16,7 @@ export const Access = (props) => {
                         <SAccessAddressTitleSub>浄土宗</SAccessAddressTitleSub>
                         <SAccessAddressTitleMain>善福寺</SAccessAddressTitleMain>
                     </SAccessAddressTitle>
-                    <SAccessAddressContent>〒276-0015<br />千葉県八千代市米本2077<br />TEL: 047-488-5809<br />FAX: 047-488-5810</SAccessAddressContent>
+                    <SAccessAddressContent>〒276-0015<br />千葉県八千代市米本2077<br /><a href="tel:047-488-5809">047-488-5809</a><br />FAX: 047-488-5810</SAccessAddressContent>
                 </SAccessAddress>
                 <SAccessDirectionPublic>
                     <SAccessDirectionPublicTitle>公共交通機関をご利用の場合</SAccessDirectionPublicTitle>
@@ -63,10 +63,15 @@ const SAccessMap = styled.div`
 const SAccessMapIframe = styled.iframe`
     display: block;
     width: 100%;
-    height: 240px;
+    height: 500px;
     margin-left: auto;
     margin-right: auto;
     border: 0;
+    @media screen and (max-width: 767px) {
+        width: 500px;
+        max-width: 100%;
+        height: 240px;
+    }
 `
 
 const SAccessAddress = styled.div`

@@ -87,8 +87,8 @@ const SHeaderInner = styled.div`
     justify-content: space-between;
     align-items: center;
     @media screen and (max-width: 767px) {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 0px;
+        padding-right: 0px;
         position: relative;
     }
 `

@@ -33,10 +33,13 @@ const SAboutTitle = styled.h1`
 const SAboutImage = styled.img`
     display: block;
     width: 90%;
-    height: 35vh;
+    height: 800px;
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
+    @media screen and (max-width: 767px) {
+        height: 240px;
+    }
 `
 
 const SAboutContent = styled.p`
