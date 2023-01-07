@@ -3,7 +3,7 @@ import { Information } from "../components/Information";
 import { About } from "../components/About";
 import { Contact } from "../components/Contact";
 import { Access } from "../components/Access";
-import mainImage from './../images/image20.png'
+import mainImage from './../images/main.png'
 import { LinkButton } from "../components/LinkButton";
 
 export const MainPage = () => {
@@ -29,5 +29,4 @@ const SMain = styled.main`
 
 const SMainImage = styled.img`
     width: 100%;
-    // height: 70vh;
 `;

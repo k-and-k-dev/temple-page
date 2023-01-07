@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { InformationList } from "./InformationList";
 import { Spacer } from "./Spacer";
+import { Title } from "./Title";
 
 export const Information = (props) => {
     const { marginTop, displayNum } = props;
@@ -16,7 +17,7 @@ export const Information = (props) => {
         <>
             <Spacer size={marginTop}></Spacer>
             <SInformation>
-                <SInformationTitle>お知らせ</SInformationTitle>
+                <Title>お知らせ</Title>
                 <InformationList itemList={itemList} displayNum={displayNum}></InformationList>
             </SInformation>
         </>
@@ -27,13 +28,3 @@ const SInformation = styled.section`
     margin-top: 60px;
     font-family: 'Zen Old Mincho', serif;
 `;
-
-const SInformationTitle = styled.h1`
-    height: 54px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 600;
-    letter-spacing: .17em;
-    line-height: 1.8;
-    color: #2c2c2c;
-`

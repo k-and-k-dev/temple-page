@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Spacer } from "./Spacer";
+import { Title } from "./Title";
 
 export const Access = (props) => {
     const { marginTop } = props;
@@ -7,7 +8,7 @@ export const Access = (props) => {
         <>
             <Spacer size={marginTop}></Spacer>
             <SAccess>
-                <SAccessTitle>アクセス</SAccessTitle>
+                <Title>アクセス</Title>
                 <SAccessMap>
                     <SAccessMapIframe title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d389.46028154752884!2d140.11923203357935!3d35.75077893898744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022875e54a13eb3%3A0x85fe3b2e8814c895!2z5rWE5Zyf5a6XIOWWhOemj-Wvug!5e0!3m2!1sja!2sjp!4v1672043172770!5m2!1sja!2sjp" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></SAccessMapIframe>
                 </SAccessMap>
@@ -39,14 +40,6 @@ const SAccess = styled.section`
     margin-left: auto;
     margin-right: auto;
     font-family: 'Zen Old Mincho', serif;
-`
-
-const SAccessTitle = styled.h1`
-    font-size: 30px;
-    font-weight: 600;
-    letter-spacing: .17em;
-    line-height: 1.8;
-    color: #2c2c2c;
 `
 
 const SAccessMap = styled.div`

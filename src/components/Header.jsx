@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom"
-import logoImage from './../images/image11.png'
+import logoImage from './../images/logo.png'
 import MenuIconImage from './../images/icon-menu.png'
 
 export const scrollToTop = () => {

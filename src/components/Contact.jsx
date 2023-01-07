@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
 import { Spacer } from "./Spacer";
+import { Title } from "./Title";
 
 const sendMailApiUrl = "https://uy3d4sbsp7.execute-api.ap-northeast-1.amazonaws.com/v1/send";
 
@@ -39,7 +40,7 @@ export const Contact = (props) => {
         <>
             <Spacer size={marginTop}></Spacer>
             <SContact>
-                <SContactTitle>お問い合わせ</SContactTitle>
+                <Title>お問い合わせ</Title>
                 <SContactContent>葬儀、法要、その他お問い合わせにつきましては、下記の通りお電話かメールにてご連絡下さい。</SContactContent>
                 <SContactTell>
                     <SContactTellTitle>お電話でのお問い合わせ</SContactTellTitle>
@@ -79,15 +80,6 @@ const SContact = styled.section`
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-`
-
-const SContactTitle = styled.h1`
-    text-align: center;
-    font-size: 30px;
-    font-weight: 600;
-    letter-spacing: .17em;
-    line-height: 1.8;
-    color: #2c2c2c;
 `
 
 const SContactContent = styled.p`
