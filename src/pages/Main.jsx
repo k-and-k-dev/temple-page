@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Information } from "../components/Information";
+import { Information } from "../components/templates/Information";
 import { About } from "../components/About";
 import { Contact } from "../components/Contact";
 import { Access } from "../components/Access";
-import mainImage from './../images/main.png'
-import { LinkButton } from "../components/LinkButton";
+import mainImage from "./../images/main.png";
+import { LinkButton } from "../components/atoms/LinkButton";
 
 export const MainPage = () => {
     return (
@@ -16,7 +16,7 @@ export const MainPage = () => {
             <LinkButton page="/About">もっと見る</LinkButton>
             <Access></Access>
             <Contact></Contact>
-        </SMain >
+        </SMain>
     );
 };
 

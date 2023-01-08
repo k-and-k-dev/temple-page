@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom"
-import logoImage from './../images/logo.png'
-import MenuIconImage from './../images/icon-menu.png'
+import { Link } from "react-router-dom";
+import logoImage from "./../images/logo.png";
+import MenuIconImage from "./../images/icon-menu.png";
 
 export const scrollToTop = () => {
     window.scrollTo({
@@ -12,52 +12,80 @@ export const scrollToTop = () => {
 };
 
 export const Header = () => {
-
     const [menuActive, setMenuActive] = useState(false);
 
     const logoBtnToggle = () => {
         scrollToTop();
-    }
+    };
 
     const menuBtnToggle = () => {
         setMenuActive(!menuActive);
         scrollToTop();
-    }
+    };
 
     return (
         <SHeader>
             <SHeaderInner>
                 <SLogoContainer>
                     <SLogoImage>
-                        <Link to="/" onClick={logoBtnToggle}><img src={logoImage} alt="logo" /></Link>
+                        <Link to="/" onClick={logoBtnToggle}>
+                            <img src={logoImage} alt="logo" />
+                        </Link>
                     </SLogoImage>
                     <SLogoTextDenomination>浄土宗</SLogoTextDenomination>
                     <SLogoTextTemple>善福寺</SLogoTextTemple>
                 </SLogoContainer>
                 <SButton onClick={menuBtnToggle}></SButton>
-                {menuActive ?
+                {menuActive ? (
                     <SMenuActive>
                         <SNav>
                             <SNavUl>
-                                <SNavLi><Link to="/" onClick={menuBtnToggle}>ホーム</Link></SNavLi>
-                                <SNavLi><Link to="/information" onClick={menuBtnToggle}>お知らせ</Link></SNavLi>
-                                <SNavLi><Link to="/about" onClick={menuBtnToggle}>当山について</Link></SNavLi>
-                                <SNavLi><Link to="/contact" onClick={menuBtnToggle}>お問い合わせ</Link></SNavLi>
+                                <SNavLi>
+                                    <Link to="/" onClick={menuBtnToggle}>
+                                        ホーム
+                                    </Link>
+                                </SNavLi>
+                                <SNavLi>
+                                    <Link
+                                        to="/information"
+                                        onClick={menuBtnToggle}
+                                    >
+                                        お知らせ
+                                    </Link>
+                                </SNavLi>
+                                <SNavLi>
+                                    <Link to="/about" onClick={menuBtnToggle}>
+                                        当山について
+                                    </Link>
+                                </SNavLi>
+                                <SNavLi>
+                                    <Link to="/contact" onClick={menuBtnToggle}>
+                                        お問い合わせ
+                                    </Link>
+                                </SNavLi>
                             </SNavUl>
                         </SNav>
                     </SMenuActive>
-                    :
+                ) : (
                     <SMenu>
                         <SNav>
                             <SNavUl>
-                                <SNavLi><Link to="/">ホーム</Link></SNavLi>
-                                <SNavLi><Link to="/information">お知らせ</Link></SNavLi>
-                                <SNavLi><Link to="/about">当山について</Link></SNavLi>
-                                <SNavLi><Link to="/contact">お問い合わせ</Link></SNavLi>
+                                <SNavLi>
+                                    <Link to="/">ホーム</Link>
+                                </SNavLi>
+                                <SNavLi>
+                                    <Link to="/information">お知らせ</Link>
+                                </SNavLi>
+                                <SNavLi>
+                                    <Link to="/about">当山について</Link>
+                                </SNavLi>
+                                <SNavLi>
+                                    <Link to="/contact">お問い合わせ</Link>
+                                </SNavLi>
                             </SNavUl>
                         </SNav>
                     </SMenu>
-                }
+                )}
             </SHeaderInner>
         </SHeader>
     );
@@ -91,14 +119,14 @@ const SHeaderInner = styled.div`
         padding-right: 0px;
         position: relative;
     }
-`
+`;
 
 const SLogoContainer = styled.div`
     display: flex;
     align-items: center;
     @media screen and (max-width: 767px) {
     }
-`
+`;
 
 const SLogoImage = styled.p`
     display: block;
@@ -110,19 +138,19 @@ const SLogoImage = styled.p`
 `;
 
 const SLogoTextDenomination = styled.p`
-    font-family: 'Yuji Boku', serif;
+    font-family: "Yuji Boku", serif;
     font-size: 20px;
     letter-spacing: 0.05em;
     color: #2c2c2c;
-`
+`;
 
 const SLogoTextTemple = styled.p`
-    font-family: 'Yuji Boku', serif;
+    font-family: "Yuji Boku", serif;
     font-size: 40px;
     letter-spacing: 0.3em;
     color: #2c2c2c;
     margin-left: 10px;
-`
+`;
 
 const SButton = styled.button`
     display: none;
@@ -139,7 +167,7 @@ const SButton = styled.button`
         border-radius: 0;
         outline: none;
     }
-`
+`;
 
 const SMenu = styled.div`
     @media screen and (max-width: 767px) {
@@ -153,16 +181,15 @@ const SMenu = styled.div`
         padding-top: 30px;
         padding-bottom: 50px;
     }
-`
+`;
 
 const SMenuActive = styled(SMenu)`
     @media screen and (max-width: 767px) {
         display: block;
     }
-`
+`;
 
-export const SNav = styled.nav`
-`
+export const SNav = styled.nav``;
 
 export const SNavUl = styled.ul`
     display: flex;
@@ -170,7 +197,7 @@ export const SNavUl = styled.ul`
         display: block;
         text-align: center;
     }
-`
+`;
 
 export const SNavLi = styled.li`
     margin-left: 20px;
@@ -178,4 +205,4 @@ export const SNavLi = styled.li`
     @media screen and (max-width: 767px) {
         margin-top: 20px;
     }
-`
+`;

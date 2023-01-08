@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
-import { Spacer } from "./Spacer";
-import { Title } from "./Title";
+import { Spacer } from "./atoms/Spacer";
+import { Title } from "./atoms/Title";
 
-const sendMailApiUrl = "https://uy3d4sbsp7.execute-api.ap-northeast-1.amazonaws.com/v1/send";
+const sendMailApiUrl =
+    "https://uy3d4sbsp7.execute-api.ap-northeast-1.amazonaws.com/v1/send";
 
 export const Contact = (props) => {
-
     const { marginTop } = props;
 
     const nameKanjiRef = useRef(null);
@@ -28,8 +28,8 @@ export const Contact = (props) => {
                     name_hurigana: nameHuriganaRef.current.value,
                     email: emailRef.current.value,
                     subject: subjectRef.current.value,
-                    message: messageRef.current.value
-                }
+                    message: messageRef.current.value,
+                },
             }),
         });
         const resJson = await res.json();
@@ -41,31 +41,91 @@ export const Contact = (props) => {
             <Spacer size={marginTop}></Spacer>
             <SContact>
                 <Title>お問い合わせ</Title>
-                <SContactContent>葬儀、法要、その他お問い合わせにつきましては、下記の通りお電話かメールにてご連絡下さい。</SContactContent>
+                <SContactContent>
+                    葬儀、法要、その他お問い合わせにつきましては、下記の通りお電話かメールにてご連絡下さい。
+                </SContactContent>
                 <SContactTell>
-                    <SContactTellTitle>お電話でのお問い合わせ</SContactTellTitle>
+                    <SContactTellTitle>
+                        お電話でのお問い合わせ
+                    </SContactTellTitle>
                     <SContactTellHr></SContactTellHr>
-                    <SContactTellContent><a href="tel:047-488-5809"><u>047-488-5809</u></a></SContactTellContent>
+                    <SContactTellContent>
+                        <a href="tel:047-488-5809">
+                            <u>047-488-5809</u>
+                        </a>
+                    </SContactTellContent>
                 </SContactTell>
                 <SContactMail>
-                    <SContactMailTitle>メールでのお問い合わせ</SContactMailTitle>
+                    <SContactMailTitle>
+                        メールでのお問い合わせ
+                    </SContactMailTitle>
                     <SContactMailHr></SContactMailHr>
-                    <SContactMailContent>下記専用フォームにて必要事項を入力後、送信ボタンを押して下さい。<br />数日中にご回答差し上げますが、万が一返信のない場合には再度送信いただくか、お電話にてご連絡ください。</SContactMailContent>
+                    <SContactMailContent>
+                        下記専用フォームにて必要事項を入力後、送信ボタンを押して下さい。
+                        <br />
+                        数日中にご回答差し上げますが、万が一返信のない場合には再度送信いただくか、お電話にてご連絡ください。
+                    </SContactMailContent>
                 </SContactMail>
                 <SContactForm action="#">
                     <SContactFormArea>
-                        <SContactFormAreaRequiredDt><span>お名前（漢字）</span></SContactFormAreaRequiredDt>
-                        <SContactFormAreaDd><SContactFormInput type="text" ref={nameKanjiRef} required></SContactFormInput></SContactFormAreaDd>
-                        <SContactFormAreaRequiredDt><span>お名前（フリガナ）</span></SContactFormAreaRequiredDt>
-                        <SContactFormAreaDd><SContactFormInput type="text" ref={nameHuriganaRef} required></SContactFormInput></SContactFormAreaDd>
-                        <SContactFormAreaRequiredDt><span>メールアドレス</span></SContactFormAreaRequiredDt>
-                        <SContactFormAreaDd><SContactFormInput type="email" ref={emailRef} required></SContactFormInput></SContactFormAreaDd>
-                        <SContactFormAreaOptionDt><span>件名</span></SContactFormAreaOptionDt>
-                        <SContactFormAreaDd><SContactFormInput type="text" ref={subjectRef}></SContactFormInput></SContactFormAreaDd>
-                        <SContactFormAreaRequiredDt><span>お問い合わせ内容</span></SContactFormAreaRequiredDt>
-                        <SContactFormAreaDd><SContactFormTextArea name="message" ref={messageRef} required></SContactFormTextArea></SContactFormAreaDd>
-                        <SContactFormConfirm>ご入力内容をご確認の上、お間違いがなければ送信ボタンを押してください。</SContactFormConfirm>
-                        <SContactFormSubmitBtn type="submit" onClick={submitBtnToggle}>送信</SContactFormSubmitBtn>
+                        <SContactFormAreaRequiredDt>
+                            <span>お名前（漢字）</span>
+                        </SContactFormAreaRequiredDt>
+                        <SContactFormAreaDd>
+                            <SContactFormInput
+                                type="text"
+                                ref={nameKanjiRef}
+                                required
+                            ></SContactFormInput>
+                        </SContactFormAreaDd>
+                        <SContactFormAreaRequiredDt>
+                            <span>お名前（フリガナ）</span>
+                        </SContactFormAreaRequiredDt>
+                        <SContactFormAreaDd>
+                            <SContactFormInput
+                                type="text"
+                                ref={nameHuriganaRef}
+                                required
+                            ></SContactFormInput>
+                        </SContactFormAreaDd>
+                        <SContactFormAreaRequiredDt>
+                            <span>メールアドレス</span>
+                        </SContactFormAreaRequiredDt>
+                        <SContactFormAreaDd>
+                            <SContactFormInput
+                                type="email"
+                                ref={emailRef}
+                                required
+                            ></SContactFormInput>
+                        </SContactFormAreaDd>
+                        <SContactFormAreaOptionDt>
+                            <span>件名</span>
+                        </SContactFormAreaOptionDt>
+                        <SContactFormAreaDd>
+                            <SContactFormInput
+                                type="text"
+                                ref={subjectRef}
+                            ></SContactFormInput>
+                        </SContactFormAreaDd>
+                        <SContactFormAreaRequiredDt>
+                            <span>お問い合わせ内容</span>
+                        </SContactFormAreaRequiredDt>
+                        <SContactFormAreaDd>
+                            <SContactFormTextArea
+                                name="message"
+                                ref={messageRef}
+                                required
+                            ></SContactFormTextArea>
+                        </SContactFormAreaDd>
+                        <SContactFormConfirm>
+                            ご入力内容をご確認の上、お間違いがなければ送信ボタンを押してください。
+                        </SContactFormConfirm>
+                        <SContactFormSubmitBtn
+                            type="submit"
+                            onClick={submitBtnToggle}
+                        >
+                            送信
+                        </SContactFormSubmitBtn>
                     </SContactFormArea>
                 </SContactForm>
             </SContact>
@@ -76,11 +136,11 @@ export const Contact = (props) => {
 const SContact = styled.section`
     width: 90%;
     margin-top: 60px;
-    font-family: 'Zen Old Mincho', serif;
+    font-family: "Zen Old Mincho", serif;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-`
+`;
 
 const SContactContent = styled.p`
     width: 90%;
@@ -91,42 +151,40 @@ const SContactContent = styled.p`
     text-align: center;
     line-height: 1.5;
     color: #2c2c2c;
-`
+`;
 
 const SContactTell = styled.div`
     margin-top: 30px;
-`
+`;
 
-const SContactTellTitle = styled.p`
-`
+const SContactTellTitle = styled.p``;
 
 const SContactTellHr = styled.hr`
     width: 90%;
     margin-top: 5px;
     margin-left: auto;
     margin-right: auto;
-`
+`;
 
 const SContactTellContent = styled.p`
     font-size: 20px;
     font-weight: 600;
     line-height: 1.5;
     color: #0000ff;
-`
+`;
 
 const SContactMail = styled.div`
     margin-top: 30px;
-`
+`;
 
-const SContactMailTitle = styled.p`
-`
+const SContactMailTitle = styled.p``;
 
 const SContactMailHr = styled.hr`
     width: 90%;
     margin-top: 5px;
     margin-left: auto;
     margin-right: auto;
-`
+`;
 
 const SContactMailContent = styled.p`
     width: 90%;
@@ -137,7 +195,7 @@ const SContactMailContent = styled.p`
     text-align: center;
     font-size: 16px;
     line-height: 1.8em;
-`
+`;
 
 const SContactForm = styled.form`
     max-width: 90%;
@@ -148,7 +206,7 @@ const SContactForm = styled.form`
     @media screen and (max-width: 767px) {
         max-width: 100%;
     }
-`
+`;
 
 const SContactFormArea = styled.dl`
     background-color: #f8f8f8;
@@ -156,7 +214,7 @@ const SContactFormArea = styled.dl`
     padding: 10px 30px;
     display: flex;
     flex-wrap: wrap;
-`
+`;
 
 const SContactFormAreaRequiredDt = styled.dt`
     width: 200px;
@@ -165,7 +223,7 @@ const SContactFormAreaRequiredDt = styled.dt`
     font-weight: bold;
     line-height: 24px;
     &::after {
-        content: '必須';
+        content: "必須";
         font-size: 11px;
         color: #eb4f32;
         margin-left: 10px;
@@ -174,7 +232,7 @@ const SContactFormAreaRequiredDt = styled.dt`
         width: 100%;
         padding-bottom: 0;
     }
-`
+`;
 
 const SContactFormAreaOptionDt = styled.dt`
     width: 200px;
@@ -183,7 +241,7 @@ const SContactFormAreaOptionDt = styled.dt`
     font-weight: bold;
     line-height: 24px;
     &::after {
-        content: '';
+        content: "";
         font-size: 11px;
         /* color: #eb4f32; */
         margin-left: 10px;
@@ -192,7 +250,7 @@ const SContactFormAreaOptionDt = styled.dt`
         width: 100%;
         padding-bottom: 0;
     }
-`
+`;
 
 const SContactFormAreaDd = styled.dd`
     width: calc(100% - 200px);
@@ -200,7 +258,7 @@ const SContactFormAreaDd = styled.dd`
     @media screen and (max-width: 767px) {
         width: 100%;
     }
-`
+`;
 
 const SContactFormInput = styled.input`
     width: 100%;
@@ -208,14 +266,14 @@ const SContactFormInput = styled.input`
     height: 40px;
     padding-left: 10px;
     padding-right: 10px;
-`
+`;
 
 const SContactFormTextArea = styled.textarea`
     width: 100%;
     height: 260px;
     padding: 10px;
     line-height: 1.5;
-`
+`;
 
 const SContactFormConfirm = styled.p`
     width: 100%;
@@ -226,7 +284,7 @@ const SContactFormConfirm = styled.p`
     @media screen and (max-width: 767px) {
         /* text-align: left; */
     }
-`
+`;
 
 const SContactFormSubmitBtn = styled.button`
     width: 30%;
@@ -239,7 +297,7 @@ const SContactFormSubmitBtn = styled.button`
     min-width: 180px;
     line-height: 48px;
     border-radius: 24px;
-    font-family: 'Montserat', sans-serif;
+    font-family: "Montserat", sans-serif;
     font-size: 14px;
     text-align: center;
     cursor: pointer;
@@ -250,4 +308,4 @@ const SContactFormSubmitBtn = styled.button`
     @media screen and (max-width: 767px) {
         width: 100%;
     }
-`
+`;
