@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import mainImage from "./../images/about.png";
-import { Spacer } from "./atoms/Spacer";
-import { Title } from "./atoms/Title";
+import { Spacer } from "../atoms/Spacer";
+import { Title } from "../atoms/Title";
+import mainImage from "./../../images/about.webp";
 
 export const About = (props) => {
     const { marginTop } = props;

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { Information } from "../components/templates/Information";
-import { About } from "../components/About";
-import { Contact } from "../components/Contact";
-import { Access } from "../components/Access";
-import mainImage from "./../images/main.png";
+import { About } from "../components/templates/About";
+import { Contact } from "../components/templates/Contact";
+import { Access } from "../components/templates/Access";
 import { LinkButton } from "../components/atoms/LinkButton";
+import mainImage from "./../images/main.webp";
 
 export const MainPage = () => {
     return (

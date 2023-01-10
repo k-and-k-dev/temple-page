@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Spacer } from "./atoms/Spacer";
-import { Title } from "./atoms/Title";
+import { Spacer } from "../atoms/Spacer";
+import { Title } from "../atoms/Title";
 
 export const Access = (props) => {
     const { marginTop } = props;

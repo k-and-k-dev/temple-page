@@ -1,4 +1,4 @@
-import { Contact } from "../components/Contact";
+import { Contact } from "../components/templates/Contact";
 
 export const ContactPage = () => {
     const marginTop = "70px";

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
-import { Spacer } from "./atoms/Spacer";
-import { Title } from "./atoms/Title";
+import { Spacer } from "../atoms/Spacer";
+import { Title } from "../atoms/Title";
 
 const sendMailApiUrl =
     "https://uy3d4sbsp7.execute-api.ap-northeast-1.amazonaws.com/v1/send";

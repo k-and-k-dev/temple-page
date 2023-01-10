@@ -1,4 +1,4 @@
-import { About } from "../components/About";
+import { About } from "../components/templates/About";
 
 export const AboutPage = () => {
     const marginTop = "70px";
