@@ -7,7 +7,5 @@ export const InformationTitle = (props) => {
 };
 
 const STitle = styled.p`
-    margin-top: 5px;
-    padding-top: 5px;
     line-height: 1.8em;
 `;

@@ -8,7 +8,6 @@ export const InformationList = (props) => {
         <SItemList>
             {itemList.slice(0, displayNum).map((item, index) => (
                 <InformationItem
-                    date={item.date}
                     title={item.title}
                     body={item.body}
                     key={index}

@@ -6,4 +6,7 @@ export const InformationBody = (props) => {
     return <SBody>{children}</SBody>;
 };
 
-const SBody = styled.p``;
+const SBody = styled.p`
+    margin-top: 5px;
+    font-size: 14px;
+`;

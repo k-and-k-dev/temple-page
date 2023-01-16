@@ -1,18 +1,30 @@
 import styled from "styled-components";
-import { InformationDate } from "../atoms/information/InformationDate";
-import { InformationHr } from "../atoms/information/InformationHr";
 import { InformationTitle } from "../atoms/information/InformationTitle";
+import { InformationHr } from "../atoms/information/InformationHr";
 import { InformationBody } from "../atoms/information/InformationBody";
+import { useRef, useState } from "react";
 
 export const InformationItem = (props) => {
-    const { date, title, body } = props;
+    const { title, body } = props;
+
+    const bodyElement = useRef(null);
+    const [isShowBody, setIsShowBody] = useState(false);
+
+    const handleClick = () => {
+        setIsShowBody(!isShowBody);
+    };
 
     return (
-        <SItem>
-            <InformationDate>{date}</InformationDate>
-            <InformationHr />
+        <SItem onClick={handleClick} draggable="true">
             <InformationTitle>{title}</InformationTitle>
-            <InformationBody>{body}</InformationBody>
+            <InformationHr />
+            {isShowBody ? (
+                <SBody>
+                    <InformationBody ref={bodyElement}>{body}</InformationBody>
+                </SBody>
+            ) : (
+                <></>
+            )}
         </SItem>
     );
 };
@@ -24,4 +36,12 @@ const SItem = styled.div`
     margin-bottom: 10px;
     padding: 15px;
     color: #2c2c2c;
+`;
+
+const SBody = styled.div`
+    margin-top: 10px;
+    transition: height 0.2s linear, opacity 0.2s ease-in;
+    white-space: pre-wrap;
+    text-align: left;
+    /* overflow: hidden; */
 `;
