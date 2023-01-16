@@ -4,7 +4,7 @@ import { Spacer } from "../atoms/Spacer";
 import { Title } from "../atoms/Title";
 
 const sendMailApiUrl =
-    "https://uy3d4sbsp7.execute-api.ap-northeast-1.amazonaws.com/v1/send";
+    "https://tdfkf1d9jh.execute-api.us-west-2.amazonaws.com/v1/send";
 
 export const Contact = (props) => {
     const { marginTop } = props;

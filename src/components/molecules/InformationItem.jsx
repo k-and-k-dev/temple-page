@@ -7,7 +7,6 @@ import { useRef, useState } from "react";
 export const InformationItem = (props) => {
     const { title, body } = props;
 
-    const bodyElement = useRef(null);
     const [isShowBody, setIsShowBody] = useState(false);
 
     const handleClick = () => {
@@ -20,7 +19,7 @@ export const InformationItem = (props) => {
             <InformationHr />
             {isShowBody ? (
                 <SBody>
-                    <InformationBody ref={bodyElement}>{body}</InformationBody>
+                    <InformationBody>{body}</InformationBody>
                 </SBody>
             ) : (
                 <></>
