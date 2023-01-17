@@ -9,6 +9,7 @@ const sendMailApiUrl =
 export const Contact = (props) => {
     const { marginTop } = props;
 
+    const formRef = useRef(null);
     const nameKanjiRef = useRef(null);
     const nameHuriganaRef = useRef(null);
     const emailRef = useRef(null);
@@ -16,8 +17,18 @@ export const Contact = (props) => {
     const messageRef = useRef(null);
 
     const submitBtnToggle = async (e) => {
-        // submit後にリロードさせない
-        e.preventDefault();
+        if (document.forms["contactForm"].reportValidity()) {
+            // 入力検証成功時にリロードさせない
+            e.preventDefault();
+        } else {
+            // 入力検証失敗時は何もしない
+            return;
+        }
+
+        // 送信確認ダイアログ表示
+        if (!window.confirm("送信してよろしいですか？")) {
+            return;
+        }
 
         // API Gateway経由でSESメール送信
         const res = await fetch(sendMailApiUrl, {
@@ -34,6 +45,9 @@ export const Contact = (props) => {
         });
         const resJson = await res.json();
         console.log(resJson);
+
+        // フォームの入力をリセット
+        formRef.current.reset();
     };
 
     return (
@@ -66,7 +80,7 @@ export const Contact = (props) => {
                         数日中にご回答差し上げますが、万が一返信のない場合には再度送信いただくか、お電話にてご連絡ください。
                     </SContactMailContent>
                 </SContactMail>
-                <SContactForm action="#">
+                <SContactForm action="#" name="contactForm" ref={formRef}>
                     <SContactFormArea>
                         <SContactFormAreaRequiredDt>
                             <span>お名前（漢字）</span>
