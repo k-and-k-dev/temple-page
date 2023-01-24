@@ -7,6 +7,7 @@ export const Title = (props) => {
 };
 
 const STitle = styled.h1`
+    font-family: "Zen Old Mincho", serif;
     text-align: center;
     font-size: 30px;
     font-weight: 600;

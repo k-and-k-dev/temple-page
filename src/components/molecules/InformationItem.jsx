@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { InformationTitle } from "../atoms/information/InformationTitle";
 import { InformationHr } from "../atoms/information/InformationHr";
 import { InformationBody } from "../atoms/information/InformationBody";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 export const InformationItem = (props) => {
     const { title, body } = props;

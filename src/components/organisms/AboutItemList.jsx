@@ -1,21 +1,18 @@
 import styled from "styled-components";
-import { InformationItem } from "../molecules/InformationItem";
+import { AboutItem } from "../molecules/AboutItem";
 
-export const InformationList = (props) => {
+export const AboutItemList = (props) => {
     const { itemList, displayNum } = props;
 
     return (
         <SItemList>
             {itemList.slice(0, displayNum).map((item, index) => (
-                <InformationItem title={item.title} body={item.body} key={index} />
+                <AboutItem title={item.title} image={item.image} body={item.body} key={index} />
             ))}
         </SItemList>
     );
 };
 
 const SItemList = styled.div`
-    width: 90%;
     margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
 `;

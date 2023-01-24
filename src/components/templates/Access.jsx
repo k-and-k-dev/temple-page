@@ -7,7 +7,7 @@ export const Access = (props) => {
 
     return (
         <>
-            <Spacer size={marginTop}></Spacer>
+            <Spacer size={marginTop} />
             <SAccess>
                 <Title>アクセス</Title>
                 <SAccessMap>
@@ -22,9 +22,7 @@ export const Access = (props) => {
                 <SAccessAddress>
                     <SAccessAddressTitle>
                         <SAccessAddressTitleSub>浄土宗</SAccessAddressTitleSub>
-                        <SAccessAddressTitleMain>
-                            善福寺
-                        </SAccessAddressTitleMain>
+                        <SAccessAddressTitleMain>善福寺</SAccessAddressTitleMain>
                     </SAccessAddressTitle>
                     <SAccessAddressContent>
                         〒276-0015
@@ -37,9 +35,7 @@ export const Access = (props) => {
                     </SAccessAddressContent>
                 </SAccessAddress>
                 <SAccessDirectionPublic>
-                    <SAccessDirectionPublicTitle>
-                        公共交通機関をご利用の場合
-                    </SAccessDirectionPublicTitle>
+                    <SAccessDirectionPublicTitle>公共交通機関をご利用の場合</SAccessDirectionPublicTitle>
                     <SAccessDirectionPublicHr></SAccessDirectionPublicHr>
                     <SAccessDirectionPublicContent>
                         京成電鉄「勝田台」駅下車
@@ -50,9 +46,7 @@ export const Access = (props) => {
                     </SAccessDirectionPublicContent>
                 </SAccessDirectionPublic>
                 <SAccessDirectionCar>
-                    <SAccessDirectionCarTitle>
-                        お車でお越しの場合
-                    </SAccessDirectionCarTitle>
+                    <SAccessDirectionCarTitle>お車でお越しの場合</SAccessDirectionCarTitle>
                     <SAccessDirectionCarHr></SAccessDirectionCarHr>
                     <SAccessDirectionCarContent>
                         国道16号線「米本神社前」交差点を

@@ -15,13 +15,10 @@ export const Information = (props) => {
 
     return (
         <>
-            <Spacer size={marginTop}></Spacer>
+            <Spacer size={marginTop} />
             <SInformation>
                 <Title>お知らせ</Title>
-                <InformationList
-                    itemList={itemList}
-                    displayNum={displayNum}
-                ></InformationList>
+                <InformationList itemList={itemList} displayNum={displayNum} />
             </SInformation>
         </>
     );

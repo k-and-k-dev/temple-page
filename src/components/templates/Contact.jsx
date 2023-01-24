@@ -3,8 +3,7 @@ import styled from "styled-components";
 import { Spacer } from "../atoms/Spacer";
 import { Title } from "../atoms/Title";
 
-const sendMailApiUrl =
-    "https://0cl8izsuwe.execute-api.ap-northeast-1.amazonaws.com/v1/send";
+const sendMailApiUrl = "https://0cl8izsuwe.execute-api.ap-northeast-1.amazonaws.com/v1/send";
 
 export const Contact = (props) => {
     const { marginTop } = props;
@@ -52,16 +51,14 @@ export const Contact = (props) => {
 
     return (
         <>
-            <Spacer size={marginTop}></Spacer>
+            <Spacer size={marginTop} />
             <SContact>
                 <Title>お問い合わせ</Title>
                 <SContactContent>
                     葬儀、法要、その他お問い合わせにつきましては、下記の通りお電話かメールにてご連絡下さい。
                 </SContactContent>
                 <SContactTell>
-                    <SContactTellTitle>
-                        お電話でのお問い合わせ
-                    </SContactTellTitle>
+                    <SContactTellTitle>お電話でのお問い合わせ</SContactTellTitle>
                     <SContactTellHr></SContactTellHr>
                     <SContactTellContent>
                         <a href="tel:047-488-5809">
@@ -70,9 +67,7 @@ export const Contact = (props) => {
                     </SContactTellContent>
                 </SContactTell>
                 <SContactMail>
-                    <SContactMailTitle>
-                        メールでのお問い合わせ
-                    </SContactMailTitle>
+                    <SContactMailTitle>メールでのお問い合わせ</SContactMailTitle>
                     <SContactMailHr></SContactMailHr>
                     <SContactMailContent>
                         下記専用フォームにて必要事項を入力後、送信ボタンを押して下さい。
@@ -86,58 +81,36 @@ export const Contact = (props) => {
                             <span>お名前（漢字）</span>
                         </SContactFormAreaRequiredDt>
                         <SContactFormAreaDd>
-                            <SContactFormInput
-                                type="text"
-                                ref={nameKanjiRef}
-                                required
-                            ></SContactFormInput>
+                            <SContactFormInput type="text" ref={nameKanjiRef} required></SContactFormInput>
                         </SContactFormAreaDd>
                         <SContactFormAreaRequiredDt>
                             <span>お名前（フリガナ）</span>
                         </SContactFormAreaRequiredDt>
                         <SContactFormAreaDd>
-                            <SContactFormInput
-                                type="text"
-                                ref={nameHuriganaRef}
-                                required
-                            ></SContactFormInput>
+                            <SContactFormInput type="text" ref={nameHuriganaRef} required></SContactFormInput>
                         </SContactFormAreaDd>
                         <SContactFormAreaRequiredDt>
                             <span>メールアドレス</span>
                         </SContactFormAreaRequiredDt>
                         <SContactFormAreaDd>
-                            <SContactFormInput
-                                type="email"
-                                ref={emailRef}
-                                required
-                            ></SContactFormInput>
+                            <SContactFormInput type="email" ref={emailRef} required></SContactFormInput>
                         </SContactFormAreaDd>
                         <SContactFormAreaOptionDt>
                             <span>件名</span>
                         </SContactFormAreaOptionDt>
                         <SContactFormAreaDd>
-                            <SContactFormInput
-                                type="text"
-                                ref={subjectRef}
-                            ></SContactFormInput>
+                            <SContactFormInput type="text" ref={subjectRef}></SContactFormInput>
                         </SContactFormAreaDd>
                         <SContactFormAreaRequiredDt>
                             <span>お問い合わせ内容</span>
                         </SContactFormAreaRequiredDt>
                         <SContactFormAreaDd>
-                            <SContactFormTextArea
-                                name="message"
-                                ref={messageRef}
-                                required
-                            ></SContactFormTextArea>
+                            <SContactFormTextArea name="message" ref={messageRef} required></SContactFormTextArea>
                         </SContactFormAreaDd>
                         <SContactFormConfirm>
                             ご入力内容をご確認の上、お間違いがなければ送信ボタンを押してください。
                         </SContactFormConfirm>
-                        <SContactFormSubmitBtn
-                            type="submit"
-                            onClick={submitBtnToggle}
-                        >
+                        <SContactFormSubmitBtn type="submit" onClick={submitBtnToggle}>
                             送信
                         </SContactFormSubmitBtn>
                     </SContactFormArea>
