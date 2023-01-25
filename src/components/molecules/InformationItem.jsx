@@ -17,13 +17,17 @@ export const InformationItem = (props) => {
         <SItem onClick={handleClick} draggable="true">
             <InformationTitle>{title}</InformationTitle>
             <InformationHr />
-            {isShowBody ? (
+            {/* アコーディオンいったんオフ */}
+            {/* {isShowBody ? (
                 <SBody>
                     <InformationBody>{body}</InformationBody>
                 </SBody>
             ) : (
                 <></>
-            )}
+            )} */}
+            <SBody>
+                <InformationBody>{body}</InformationBody>
+            </SBody>
         </SItem>
     );
 };

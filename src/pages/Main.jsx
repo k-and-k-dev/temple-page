@@ -11,7 +11,7 @@ export const MainPage = () => {
         <SMain>
             <SMainImage src={mainImage} alt="mainImage" />
             <Information displayNum="3" />
-            <LinkButton page="/Information">もっと見る</LinkButton>
+            {/* <LinkButton page="/Information">もっと見る</LinkButton> */}
             <About displayNum="1" />
             <LinkButton page="/About">もっと見る</LinkButton>
             <Access />

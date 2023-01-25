@@ -8,5 +8,6 @@ export const InformationBody = (props) => {
 
 const SBody = styled.p`
     margin-top: 5px;
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1.5;
 `;
