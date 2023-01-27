@@ -33,12 +33,18 @@ export const InformationItem = (props) => {
 };
 
 const SItem = styled.div`
+    width: 90%;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: left;
     border-radius: 5px;
     background-color: #dbf0d0;
-    margin-bottom: 10px;
     padding: 15px;
     color: #2c2c2c;
+    @media screen and (max-width: 767px) {
+        width: 100%;
+    }
 `;
 
 const SBody = styled.div`

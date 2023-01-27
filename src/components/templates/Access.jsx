@@ -86,13 +86,14 @@ const SAccessMap = styled.div`
 
 const SAccessMapIframe = styled.iframe`
     display: block;
-    width: 100%;
+    width: 90%;
     height: 500px;
     margin-left: auto;
     margin-right: auto;
     border: 0;
     @media screen and (max-width: 767px) {
-        width: 500px;
+        width: 100%;
+        /* width: 500px; */
         max-width: 100%;
         height: 240px;
     }

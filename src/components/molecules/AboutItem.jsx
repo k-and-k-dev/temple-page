@@ -29,6 +29,7 @@ const SImage = styled.p`
         margin-left: auto;
         margin-right: auto;
         @media screen and (max-width: 767px) {
+            width: 100%;
             height: 240px;
         }
     }
