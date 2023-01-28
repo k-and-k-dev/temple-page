@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import logoImage from "./../images/logo.png";
 import MenuIconImage from "./../images/icon-menu.png";
+import { NavigationList } from "./organisms/NavigationList";
+import { TwitterButton } from "./atoms/TwitterButton";
 
 export const scrollToTop = () => {
     window.scrollTo({
@@ -23,6 +25,13 @@ export const Header = () => {
         scrollToTop();
     };
 
+    const navList = [
+        { link: "/", isImage: false, body: "ホーム" },
+        { link: "/information", isImage: false, body: "お知らせ" },
+        { link: "/about", isImage: false, body: "当山について" },
+        { link: "/contact", isImage: false, body: "お問い合わせ" },
+    ];
+
     return (
         <SHeader>
             <SHeaderInner>
@@ -38,54 +47,19 @@ export const Header = () => {
                 <SButton onClick={menuBtnToggle}></SButton>
                 {menuActive ? (
                     <SMenuActive>
-                        <SNav>
-                            <SNavUl>
-                                <SNavLi>
-                                    <Link to="/" onClick={menuBtnToggle}>
-                                        ホーム
-                                    </Link>
-                                </SNavLi>
-                                <SNavLi>
-                                    <Link
-                                        to="/information"
-                                        onClick={menuBtnToggle}
-                                    >
-                                        お知らせ
-                                    </Link>
-                                </SNavLi>
-                                <SNavLi>
-                                    <Link to="/about" onClick={menuBtnToggle}>
-                                        当山について
-                                    </Link>
-                                </SNavLi>
-                                <SNavLi>
-                                    <Link to="/contact" onClick={menuBtnToggle}>
-                                        お問い合わせ
-                                    </Link>
-                                </SNavLi>
-                            </SNavUl>
-                        </SNav>
+                        <NavigationList navList={navList} callback={menuBtnToggle} />
+                        <SMenuSNSArea>
+                            <TwitterButton />
+                        </SMenuSNSArea>
                     </SMenuActive>
                 ) : (
                     <SMenu>
-                        <SNav>
-                            <SNavUl>
-                                <SNavLi>
-                                    <Link to="/">ホーム</Link>
-                                </SNavLi>
-                                <SNavLi>
-                                    <Link to="/information">お知らせ</Link>
-                                </SNavLi>
-                                <SNavLi>
-                                    <Link to="/about">当山について</Link>
-                                </SNavLi>
-                                <SNavLi>
-                                    <Link to="/contact">お問い合わせ</Link>
-                                </SNavLi>
-                            </SNavUl>
-                        </SNav>
+                        <NavigationList navList={navList} />
                     </SMenu>
                 )}
+                <SSNSArea>
+                    <TwitterButton />
+                </SSNSArea>
             </SHeaderInner>
         </SHeader>
     );
@@ -189,20 +163,17 @@ const SMenuActive = styled(SMenu)`
     }
 `;
 
-export const SNav = styled.nav``;
-
-export const SNavUl = styled.ul`
-    display: flex;
+const SSNSArea = styled.div`
+    display: block;
     @media screen and (max-width: 767px) {
-        display: block;
-        text-align: center;
+        display: none;
     }
 `;
 
-export const SNavLi = styled.li`
-    margin-left: 20px;
-    margin-right: 20px;
-    @media screen and (max-width: 767px) {
-        margin-top: 20px;
-    }
+const SMenuSNSArea = styled.div`
+    width: 32px;
+    height: 32px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
 `;

@@ -9,7 +9,7 @@ import { ContactPage } from "./pages/Contact";
 function App() {
     return (
         <>
-            <Header></Header>
+            <Header />
             <Routes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/index.html" element={<MainPage />} />
@@ -17,7 +17,7 @@ function App() {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contact" element={<ContactPage />} />
             </Routes>
-            <Footer></Footer>
+            <Footer />
         </>
     );
 }
