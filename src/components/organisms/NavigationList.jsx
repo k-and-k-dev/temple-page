@@ -7,8 +7,8 @@ export const NavigationList = (props) => {
         <SNav>
             <ul>
                 {navList.map((item, index) => (
-                    <li>
-                        <Link to={item.link} target={item.target} onClick={callback} key={index}>
+                    <li key={index}>
+                        <Link to={item.link} target={item.target} onClick={callback}>
                             {item.body}
                         </Link>
                     </li>
