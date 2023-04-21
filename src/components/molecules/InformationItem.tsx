@@ -4,9 +4,12 @@ import { InformationHr } from "../atoms/information/InformationHr";
 import { InformationBody } from "../atoms/information/InformationBody";
 import { useState } from "react";
 
-export const InformationItem = (props) => {
-    const { title, body } = props;
+type Props = {
+    title: string;
+    body: string;
+};
 
+export const InformationItem = ({ title, body }: Props) => {
     const [isShowBody, setIsShowBody] = useState(false);
 
     const handleClick = () => {

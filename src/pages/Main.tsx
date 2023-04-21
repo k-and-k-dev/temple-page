@@ -10,12 +10,12 @@ export const MainPage = () => {
     return (
         <SMain>
             <SMainImage src={mainImage} alt="mainImage" />
-            <Information displayNum="3" />
+            <Information marginTop="" displayNum={3} />
             {/* <LinkButton page="/Information">もっと見る</LinkButton> */}
-            <About displayNum="1" />
+            <About marginTop="" displayNum={1} />
             <LinkButton page="/About">もっと見る</LinkButton>
-            <Access />
-            <Contact />
+            <Access marginTop="" />
+            <Contact marginTop="" />
         </SMain>
     );
 };

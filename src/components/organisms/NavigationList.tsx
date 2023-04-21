@@ -1,14 +1,19 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { navList } from "../Header";
 
-export const NavigationList = (props) => {
-    const { navList, callback } = props;
+type Props = {
+    navList: typeof navList;
+    callback: React.MouseEventHandler;
+};
+
+export const NavigationList = ({ navList, callback }: Props) => {
     return (
         <SNav>
             <ul>
                 {navList.map((item, index) => (
                     <li key={index}>
-                        <Link to={item.link} target={item.target} onClick={callback}>
+                        <Link to={item.link} onClick={callback}>
                             {item.body}
                         </Link>
                     </li>

@@ -1,8 +1,11 @@
+import React from "react";
 import styled from "styled-components";
 
-export const InformationBody = (props) => {
-    const { children } = props;
+type Props = {
+    children: React.ReactNode;
+};
 
+export const InformationBody = ({ children }: Props) => {
     return <SBody>{children}</SBody>;
 };
 

@@ -1,22 +1,24 @@
-import React, { useRef } from "react";
+import React, { MouseEventHandler, useRef } from "react";
 import styled from "styled-components";
 import { Spacer } from "../atoms/Spacer";
 import { Title } from "../atoms/Title";
 
 const sendMailApiUrl = "https://0cl8izsuwe.execute-api.ap-northeast-1.amazonaws.com/v1/send";
 
-export const Contact = (props) => {
-    const { marginTop } = props;
+type Props = {
+    marginTop: string;
+};
 
-    const formRef = useRef(null);
-    const nameKanjiRef = useRef(null);
-    const nameHuriganaRef = useRef(null);
-    const emailRef = useRef(null);
-    const subjectRef = useRef(null);
-    const messageRef = useRef(null);
+export const Contact = ({ marginTop }: Props) => {
+    const formRef = useRef<HTMLFormElement>(null);
+    const nameKanjiRef = useRef<HTMLInputElement>(null);
+    const nameHuriganaRef = useRef<HTMLInputElement>(null);
+    const emailRef = useRef<HTMLInputElement>(null);
+    const subjectRef = useRef<HTMLInputElement>(null);
+    const messageRef = useRef<HTMLTextAreaElement>(null);
 
-    const submitBtnToggle = async (e) => {
-        if (document.forms["contactForm"].reportValidity()) {
+    const submitBtnToggle: MouseEventHandler = async (e) => {
+        if (document.forms[0].reportValidity()) {
             // 入力検証成功時にリロードさせない
             e.preventDefault();
         } else {
@@ -28,6 +30,14 @@ export const Contact = (props) => {
         if (!window.confirm("送信してよろしいですか？")) {
             return;
         }
+
+        // Nullチェック
+        if (!formRef.current) throw Error("formRef is not assigned");
+        if (!nameKanjiRef.current) throw Error("nameKanjiRef is not assigned");
+        if (!nameHuriganaRef.current) throw Error("nameHuriganaRef is not assigned");
+        if (!emailRef.current) throw Error("emailRef is not assigned");
+        if (!subjectRef.current) throw Error("subjectRef is not assigned");
+        if (!messageRef.current) throw Error("messageRef is not assigned");
 
         // API Gateway経由でSESメール送信
         const res = await fetch(sendMailApiUrl, {

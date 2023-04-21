@@ -1,8 +1,11 @@
+import React from "react";
 import styled from "styled-components";
 
-export const InformationTitle = (props) => {
-    const { children } = props;
+type Props = {
+    children: React.ReactNode;
+};
 
+export const InformationTitle = ({ children }: Props) => {
     return <STitle>{children}</STitle>;
 };
 

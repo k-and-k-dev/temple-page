@@ -1,9 +1,13 @@
 import styled from "styled-components";
 import { InformationItem } from "../molecules/InformationItem";
+import { InformationList } from "../templates/Information";
 
-export const InformationList = (props) => {
-    const { itemList, displayNum } = props;
+type Props = {
+    itemList: typeof InformationList;
+    displayNum: number;
+};
 
+export const InformationItemList = ({ itemList, displayNum }: Props) => {
     return (
         <SItemList>
             {itemList.slice(0, displayNum).map((item, index) => (

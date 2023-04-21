@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-export const AboutItem = (props) => {
-    const { title, image, body } = props;
+type Props = {
+    title: string;
+    image: string;
+    body: string;
+};
 
+export const AboutItem = ({ title, image, body }: Props) => {
     return (
         <SItem>
             <STitle>{title}</STitle>

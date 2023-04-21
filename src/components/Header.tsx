@@ -1,4 +1,5 @@
-import { useState } from "react";
+/* eslint-disable @typescript-eslint/no-empty-function */
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import logoImage from "./../images/logo.png";
@@ -13,6 +14,13 @@ export const scrollToTop = () => {
     });
 };
 
+export const navList = [
+    { link: "/", isImage: false, body: "ホーム" },
+    { link: "/information", isImage: false, body: "お知らせ" },
+    { link: "/about", isImage: false, body: "当山について" },
+    { link: "/contact", isImage: false, body: "お問い合わせ" },
+];
+
 export const Header = () => {
     const [menuActive, setMenuActive] = useState(false);
 
@@ -24,13 +32,6 @@ export const Header = () => {
         setMenuActive(!menuActive);
         scrollToTop();
     };
-
-    const navList = [
-        { link: "/", isImage: false, body: "ホーム" },
-        { link: "/information", isImage: false, body: "お知らせ" },
-        { link: "/about", isImage: false, body: "当山について" },
-        { link: "/contact", isImage: false, body: "お問い合わせ" },
-    ];
 
     return (
         <SHeader>
@@ -54,7 +55,7 @@ export const Header = () => {
                     </SMenuActive>
                 ) : (
                     <SMenu>
-                        <NavigationList navList={navList} />
+                        <NavigationList navList={navList} callback={() => {}} />
                     </SMenu>
                 )}
                 <SSNSArea>

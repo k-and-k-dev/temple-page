@@ -1,11 +1,15 @@
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { scrollToTop } from "../Header";
 import { BaseButton } from "./BaseButton";
 
-export const LinkButton = (props) => {
-    const { page, children } = props;
+type Props = {
+    page: string;
+    children: React.ReactNode;
+};
 
+export const LinkButton = ({ page, children }: Props) => {
     const menuBtnToggle = () => {
         scrollToTop();
     };

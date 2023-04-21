@@ -1,6 +1,7 @@
+import React from "react";
 import styled from "styled-components";
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
     return (
         <SFooter>
             <SCopy>
@@ -13,7 +14,6 @@ export const Footer = () => {
 const SFooter = styled.footer`
     color: #ffffff;
     background-color: #1b813e;
-    /* align-items: center; */
     margin-top: 60px;
 `;
 
@@ -22,6 +22,4 @@ const SCopy = styled.p`
     padding: 10px;
     font-size: 14px;
     font-weight: bold;
-    @media screen and (max-width: 767px) {
-    }
 `;
