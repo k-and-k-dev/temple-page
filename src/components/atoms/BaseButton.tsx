@@ -1,3 +1,4 @@
+"use client";
 import styled from "styled-components";
 
 export const BaseButton = styled.button`
@@ -6,7 +7,6 @@ export const BaseButton = styled.button`
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-family: "Zen Old Mincho", serif;
     font-size: 20px;
     color: #fffffb;
     background-color: #1b813e;

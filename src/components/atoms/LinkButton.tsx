@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
+import Link from "next/link";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { scrollToTop } from "../Header";
 import { BaseButton } from "./BaseButton";
 
@@ -16,7 +17,7 @@ export const LinkButton = ({ page, children }: Props) => {
 
     return (
         <SButton>
-            <Link to={page} onClick={menuBtnToggle}>
+            <Link href={page} onClick={menuBtnToggle}>
                 {children}
             </Link>
         </SButton>

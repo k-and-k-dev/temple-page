@@ -1,6 +1,7 @@
+"use client";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { navList } from "../Header";
+import Link from "next/link";
 
 type Props = {
     navList: typeof navList;
@@ -13,7 +14,7 @@ export const NavigationList = ({ navList, callback }: Props) => {
             <ul>
                 {navList.map((item, index) => (
                     <li key={index}>
-                        <Link to={item.link} onClick={callback}>
+                        <Link href={item.link} onClick={callback}>
                             {item.body}
                         </Link>
                     </li>

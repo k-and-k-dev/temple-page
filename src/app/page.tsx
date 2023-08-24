@@ -1,3 +1,4 @@
+"use client";
 import styled from "styled-components";
 import { Information } from "../components/templates/Information";
 import { About } from "../components/templates/About";
@@ -6,19 +7,19 @@ import { Access } from "../components/templates/Access";
 import { LinkButton } from "../components/atoms/LinkButton";
 import mainImage from "./../images/main.webp";
 
-export const MainPage = () => {
+export default function Home() {
     return (
         <SMain>
-            <SMainImage src={mainImage} alt="mainImage" />
+            <SMainImage src={mainImage.src} width={960} height={720} alt="mainImage" />
             <Information marginTop="" displayNum={3} />
             {/* <LinkButton page="/Information">もっと見る</LinkButton> */}
             <About marginTop="" displayNum={1} />
-            <LinkButton page="/About">もっと見る</LinkButton>
+            <LinkButton page="/about">もっと見る</LinkButton>
             <Access marginTop="" />
             <Contact marginTop="" />
         </SMain>
     );
-};
+}
 
 const SMain = styled.main`
     margin-top: 70px;

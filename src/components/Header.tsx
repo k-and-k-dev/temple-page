@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
+"use client";
 import React, { useState } from "react";
+import Link from "next/link";
+import { Yuji_Boku } from "next/font/google";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import logoImage from "./../images/logo.png";
 import MenuIconImage from "./../images/icon-menu.png";
 import { NavigationList } from "./organisms/NavigationList";
@@ -21,6 +23,12 @@ export const navList = [
     { link: "/contact", isImage: false, body: "お問い合わせ" },
 ];
 
+const yuji_boku = Yuji_Boku({
+    weight: "400",
+    subsets: ["latin"],
+    display: "swap",
+});
+
 export const Header = () => {
     const [menuActive, setMenuActive] = useState(false);
 
@@ -38,12 +46,12 @@ export const Header = () => {
             <SHeaderInner>
                 <SLogoContainer>
                     <SLogoImage>
-                        <Link to="/" onClick={logoBtnToggle}>
-                            <img src={logoImage} alt="logo" />
+                        <Link href="/" onClick={logoBtnToggle}>
+                            <img src={logoImage.src} alt="logo" width={50} height={50} />
                         </Link>
                     </SLogoImage>
-                    <SLogoTextDenomination>浄土宗</SLogoTextDenomination>
-                    <SLogoTextTemple>善福寺</SLogoTextTemple>
+                    <SLogoTextDenomination className={yuji_boku.className}>浄土宗</SLogoTextDenomination>
+                    <SLogoTextTemple className={yuji_boku.className}>善福寺</SLogoTextTemple>
                 </SLogoContainer>
                 <SButton onClick={menuBtnToggle}></SButton>
                 {menuActive ? (
@@ -113,14 +121,12 @@ const SLogoImage = styled.p`
 `;
 
 const SLogoTextDenomination = styled.p`
-    font-family: "Yuji Boku", serif;
     font-size: 20px;
     letter-spacing: 0.05em;
     color: #2c2c2c;
 `;
 
 const SLogoTextTemple = styled.p`
-    font-family: "Yuji Boku", serif;
     font-size: 40px;
     letter-spacing: 0.3em;
     color: #2c2c2c;
@@ -133,7 +139,7 @@ const SButton = styled.button`
         display: block;
         width: 44px;
         height: 34px;
-        background-image: url(${MenuIconImage});
+        background-image: url(${MenuIconImage.src});
         background-size: 50%;
         background-position: center;
         background-repeat: no-repeat;

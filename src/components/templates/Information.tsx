@@ -1,9 +1,23 @@
+"use client";
 import styled from "styled-components";
 import { Spacer } from "../atoms/Spacer";
 import { Title } from "../atoms/Title";
 import { InformationItemList } from "../organisms/InformationItemList";
 
 export const InformationList = [
+    {
+        title: "2023.7.19 令和5年施餓鬼会のご案内",
+        body: `下記の通り施餓鬼会を執り行います。
+ご回向・お塔婆をご希望の方は、お電話、FAX、WEBお問い合わせ等にてお申し込み下さい。
+お越しになる方は、感染防止の観点からマスク着用をお願いいたします。
+【日付】8月19日(土)
+【時間】
+       13:30～  受付
+       14:00～  法要
+       15:00  解散
+【場所】善福寺本堂
+【備考】感染対策のため、例年行っていた昼食と法話は省略といたします`,
+    },
     {
         title: "2023.4.20 令和5年こどもの日のお知らせ",
         body: `こどもの日に下記の通りささやかながらお菓子と御朱印を配布します。
@@ -46,5 +60,4 @@ export const Information = ({ marginTop, displayNum }: Props) => {
 
 const SInformation = styled.section`
     margin-top: 60px;
-    font-family: "Zen Old Mincho", serif;
 `;

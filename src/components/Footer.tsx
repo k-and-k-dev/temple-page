@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 import styled from "styled-components";
 
-export const Footer: React.FC = () => {
+export const Footer = () => {
     return (
         <SFooter>
             <SCopy>

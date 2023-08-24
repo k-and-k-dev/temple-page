@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styled from "styled-components";
 
@@ -10,7 +11,6 @@ export const Title = ({ children }: Props) => {
 };
 
 const STitle = styled.h1`
-    font-family: "Zen Old Mincho", serif;
     text-align: center;
     font-size: 30px;
     font-weight: 600;

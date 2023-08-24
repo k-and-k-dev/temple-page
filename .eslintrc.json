@@ -5,7 +5,7 @@
         // "node": true,
         // "browser": true
     },
-    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier", "next"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "sourceType": "module",
@@ -17,5 +17,6 @@
         "@typescript-eslint/no-explicit-any": 1,
         "@typescript-eslint/no-non-null-assertion": 1
     },
-    "root": true
+    "root": true,
+    "ignorePatterns": ["**/*.js"]
 }

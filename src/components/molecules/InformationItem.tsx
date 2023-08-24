@@ -1,3 +1,4 @@
+"use client";
 import styled from "styled-components";
 import { InformationTitle } from "../atoms/information/InformationTitle";
 import { InformationHr } from "../atoms/information/InformationHr";

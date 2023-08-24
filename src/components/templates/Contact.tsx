@@ -1,3 +1,4 @@
+"use client";
 import React, { MouseEventHandler, useRef } from "react";
 import styled from "styled-components";
 import { Spacer } from "../atoms/Spacer";
@@ -133,7 +134,6 @@ export const Contact = ({ marginTop }: Props) => {
 const SContact = styled.section`
     width: 90%;
     margin-top: 60px;
-    font-family: "Zen Old Mincho", serif;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -294,7 +294,7 @@ const SContactFormSubmitBtn = styled.button`
     min-width: 180px;
     line-height: 48px;
     border-radius: 24px;
-    font-family: "Montserat", sans-serif;
+    /* font-family: "Montserat", sans-serif; */
     font-size: 14px;
     text-align: center;
     cursor: pointer;

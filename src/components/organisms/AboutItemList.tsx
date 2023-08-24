@@ -1,3 +1,4 @@
+"use client";
 import styled from "styled-components";
 import { AboutItem } from "../molecules/AboutItem";
 import { AboutList } from "../templates/About";
@@ -11,7 +12,7 @@ export const AboutItemList = ({ itemList, displayNum }: Props) => {
     return (
         <SItemList>
             {itemList.slice(0, displayNum).map((item, index) => (
-                <AboutItem title={item.title} image={item.image} body={item.body} key={index} />
+                <AboutItem title={item.title} image={item.image.src} body={item.body} key={index} />
             ))}
         </SItemList>
     );

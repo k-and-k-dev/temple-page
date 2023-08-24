@@ -1,3 +1,4 @@
+"use client";
 import styled from "styled-components";
 import { Spacer } from "../atoms/Spacer";
 import { Title } from "../atoms/Title";
@@ -71,7 +72,6 @@ const SAccess = styled.section`
     margin-top: 60px;
     margin-left: auto;
     margin-right: auto;
-    font-family: "Zen Old Mincho", serif;
 `;
 
 const SAccessMap = styled.div`
