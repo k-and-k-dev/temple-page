@@ -1,4 +1,4 @@
 修正する
 確認する npm run dev
 ビルドする npm run build
-GitHub Pages フォルダ(docs)にコピーしてプッシュ
+outフォルダをGitHub Pages フォルダ(docs)にコピーしてプッシュ

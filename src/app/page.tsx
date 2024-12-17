@@ -13,7 +13,7 @@ export default function Home() {
             <h1>
                 <SMainImage src={mainImage.src} width={960} height={720} alt="浄土宗善福寺" />
             </h1>
-            <Information marginTop="" displayNum={3} />
+            <Information marginTop="" displayNum={4} />
             {/* <LinkButton page="/Information">もっと見る</LinkButton> */}
             <About marginTop="" displayNum={1} />
             <LinkButton page="/about">もっと見る</LinkButton>
